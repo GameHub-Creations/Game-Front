@@ -3,13 +3,12 @@ import PlayerRank from "./playerRank";
 
 function PlayerData(props) {
   return (
-    <div
-      className={props.classPlayerName}
-      userId={props.userId}
-      title={props.title}
-    >
+    <div className={props.classPlayerName} userId={props.userId}>
       {props.valuePlayer}
-      <PlayerRank value={props.valuePlayerRank} />
+      <PlayerRank
+        classPlayerRank={props.classPlayerRank}
+        valuePlayerRank={props.valuePlayerRank}
+      />
     </div>
   );
 }

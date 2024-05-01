@@ -1,10 +1,7 @@
 import React from "react";
-import "./../styles/playerRank.css"
 
 function PlayerRank(props) {
-  return (
-    <span className='playerRank'>{props.value}</span>
-  );
+  return <span className={props.classPlayerRank}>{props.valuePlayerRank}</span>;
 }
 
 export default PlayerRank;

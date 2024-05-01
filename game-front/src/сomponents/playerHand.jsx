@@ -5,18 +5,16 @@ import PlayerData from "./playerData";
 function PlayerHand(props) {
   return (
     <div>
-          <PlayerData
-            classPlayerName={props.classPlayerName}
-            userId={props.userId}
-            title={props.title}
-            valuePlayer={props.valuePlayer}
-            valuePlayerRank={props.valuePlayerRank}
-          />
-          <div className={props.classHandCount}>{props.valueCount}</div>
-          <div className={props.classHandCards}>
-            {props.card}
-          </div>
-        </div>
+      <PlayerData
+        classPlayerName={props.classPlayerName}
+        userId={props.userId}
+        valuePlayer={props.valuePlayer}
+        classPlayerRank={props.classPlayerRank}
+        valuePlayerRank={props.valuePlayerRank}
+      />
+      <div className={props.classCount}>{props.valueCount}</div>
+      <div className={props.classCards}>{props.cards}</div>
+    </div>
   );
 }
 
