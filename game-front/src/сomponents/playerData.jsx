@@ -1,11 +1,10 @@
 import React from "react";
 import PlayerRank from "./playerRank";
 
-function Player(props) {
+function PlayerData(props) {
   return (
     <div
-      className={props.valueClassName}
-      userName={props.userName}
+      className={props.classPlayerName}
       userId={props.userId}
       title={props.title}
     >
@@ -15,4 +14,4 @@ function Player(props) {
   );
 }
 
-export default Player;
+export default PlayerData;

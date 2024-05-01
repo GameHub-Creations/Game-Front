@@ -1,0 +1,21 @@
+/* --------------- Карты игроков --------------- */
+
+/* Общие стили карт */
+.card {
+  position: absolute; /* относительное позиционирование элемента */
+  height: 155px; /* высота карты */
+  width: 100px; /* ширина карты */
+  border: 1px solid #696969; /* борт карты */
+  border-radius: 10px; /* закругление углов карт */
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2); /* тень от карт */
+  cursor: pointer; /* смена курсора при наведении */
+}
+
+/* Ссылка на картинку карт */
+.pictureCard .card {
+  background: url("./../imgs/card.jpg");
+}
+/* Ссылка на рубашку карт */
+.shirtCard .card.back {
+  background: url("./../imgs/shirt.jpg");
+}
