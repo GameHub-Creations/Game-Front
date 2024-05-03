@@ -1,15 +1,26 @@
-import GameField from "./сomponents/gameField";
-import "./styles/gameField.css";
+import GameField from "./сomponents/game/gameField";
+import "./styles/game/gameField.css";
 
 import "./App.css";
+import Header from "./сomponents/game/header";
+import "./styles/game/header.css";
 
-// import "./styles/hands.css";
-// import "./styles/player1.css";
-// import "./styles/player0.css";
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Avatar from "./сomponents/avatar/avatar";
+import Main from "./сomponents/main/main";
 function App() {
-  return <GameField />;
+  return (
+    <div>
+      <BrowserRouter>
+        <Header classHeaderMenu="headerMenu" classMenuItem="menuItem" classActive="active"/>
+        <Routes>
+          <Route path="/" element={<GameField />} />
+          <Route path="/avatar" element={<Avatar />} />
+          <Route path="/main" element={<Main />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

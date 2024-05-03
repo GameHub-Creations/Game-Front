@@ -3,6 +3,8 @@
 /* Задний фон html */
 html,
 body {
+  /* margin: 0;
+  padding: 0; */
   background-color: gray; /* Цвет заднего фона*/
   height: 100%;
 }
@@ -13,9 +15,9 @@ body {
 /* Общие стили игрового поля */
 #gameField {
   position: absolute; /* относительное позиционирование элемента */
-  background-image: url("./../imgs/imgField.jpg");
+  background-image: url("./../../imgs/imgField.jpg");
   background-repeat: no-repeat; /* фоновое изображение не повторяется */
-  height: 100%;
+  height: 95%;
   width: 100%;
 }
 

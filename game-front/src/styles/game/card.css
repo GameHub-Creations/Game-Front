@@ -13,9 +13,9 @@
 
 /* Ссылка на картинку карт */
 .pictureCard .card {
-  background: url("./../imgs/card.jpg");
+  background: url("./../../imgs/card.jpg");
 }
 /* Ссылка на рубашку карт */
 .shirtCard .card.back {
-  background: url("./../imgs/shirt.jpg");
+  background: url("./../../imgs/shirt.jpg");
 }

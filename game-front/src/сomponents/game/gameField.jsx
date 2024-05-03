@@ -1,15 +1,16 @@
 import React from "react";
 import Button from "./button";
 import Action from "./action";
-import "./../styles/deck.css";
-import "./../styles/playerData.css";
-import "./../styles/playerHand.css";
+import "./../../styles/game/deck.css";
+import "./../../styles/game/playerData.css";
+import "./../../styles/game/playerHand.css";
 import Card from "./card";
-import "./../styles/playerRank.css"
-import "./../styles/button.css";
+import "./../../styles/game/playerRank.css"
+import "./../../styles/game/button.css";
 import PlayerHand from "./playerHand";
 import Deck from "./Deck";
-import "./../styles/action.css";
+import "./../../styles/game/action.css";
+
 function GameField() {
   return (
     <div id="gameField" className="content pictureCard shirtCard">
