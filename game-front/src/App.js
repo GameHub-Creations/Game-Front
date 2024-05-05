@@ -1,12 +1,12 @@
-import GameField from "./сomponents/game/gameField";
 import "./styles/game/gameField.css";
-
 import "./App.css";
-import Header from "./сomponents/game/header";
 import "./styles/game/header.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Avatar from "./сomponents/avatar/avatar";
+import GameField from "./сomponents/game/gameField";
+import Header from "./сomponents/game/header";
 import Main from "./сomponents/main/main";
 
 function App() {
