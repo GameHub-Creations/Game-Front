@@ -1,5 +1,5 @@
-import React from "react";
 import PlayerRank from "./playerRank";
+import React from "react";
 
 function PlayerData(props) {
   return (

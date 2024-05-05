@@ -1,15 +1,16 @@
-import React from "react";
-import Button from "./button";
-import Action from "./action";
 import "./../../styles/game/deck.css";
 import "./../../styles/game/playerData.css";
 import "./../../styles/game/playerHand.css";
-import Card from "./card";
 import "./../../styles/game/playerRank.css"
 import "./../../styles/game/button.css";
-import PlayerHand from "./playerHand";
-import Deck from "./Deck";
 import "./../../styles/game/action.css";
+
+import Action from "./action";
+import Button from "./button";
+import Card from "./card";
+import Deck from "./Deck";
+import PlayerHand from "./playerHand";
+import React from "react";
 
 function GameField() {
   return (

@@ -1,6 +1,5 @@
-import React from "react";
-
 import PlayerData from "./playerData";
+import React from "react";
 
 function PlayerHand(props) {
   return (
