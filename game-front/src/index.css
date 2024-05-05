@@ -1,9 +1,14 @@
+/* Задний фон html */
+html,
 body {
+  /* внешний отступ */
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  /* внутренний отступ */
+  padding: 0;
+  /* цвет заднего фона */
+  background-color: gray;
+  /* высота элемента */
+  height: 100%;
 }
+
  

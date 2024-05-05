@@ -8,6 +8,7 @@ import "./styles/game/header.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Avatar from "./сomponents/avatar/avatar";
 import Main from "./сomponents/main/main";
+
 function App() {
   return (
     <div>
@@ -15,8 +16,8 @@ function App() {
         <Header classHeaderMenu="headerMenu" classMenuItem="menuItem" classActive="active"/>
         <Routes>
           <Route path="/" element={<GameField />} />
-          <Route path="/avatar" element={<Avatar />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/avatar" element={<Avatar />} />
         </Routes>
       </BrowserRouter>
     </div>

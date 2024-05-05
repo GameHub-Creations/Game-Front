@@ -13,3 +13,11 @@
   color: rgb(170, 153, 59);
 }
 
+.menuItem + .menuItem {
+  margin-left: 1.3em;    /* Применить отступы начиная со второго элемента */
+}
+
+
+.menuItemRight {
+  margin-left: auto;    /* Перенести крайний элемент в право */
+}
