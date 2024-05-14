@@ -14,61 +14,118 @@ import UserHand from "./userHand";
 
 function GameField() {
   
-  let usersData = [
-    { userId: "00000001", userName: "Гость 77777777", userRank: "666", "countCards": 2, "cards": null },
-    { userId: "00000002", userName: "Гость 88888888", userRank: "999", "countCards": 1, "cards": null },
-  ];
+  let closedCardsData = [{ suit: "♥", nominal: "10" }];
 
-  let decksData = [
-    { userId: "00000011", userName: "closedDeck", "countCards": 31, "cards": null },
-    { userId: "00000012", userName: "openDeck", "countCards": 1, "cards": null },
-    { userId: "00000013", userName: "firsTemporaryDeck", "countCards": 1, "cards": null },
-  ];
+  let closedCardsElements = closedCardsData.map((el) => (
+    <Card classCard="card back" dataSuit={el.suit} dataNominal={el.nominal} />
+  ));
+
+  let openCardsData = [{ suit: "♥", nominal: "10" }];
+
+  let openCardsElements = openCardsData.map((el) => (
+    <Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />
+  ));
+
+  let firsTemporaryCardsData = [{ suit: "♥", nominal: "10" }];
+
+  let firsTemporaryCardsElements = firsTemporaryCardsData.map((el) => (
+    <Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />
+  ));
+
+  let closedDeckElements = {
+    userId: "00000011",
+    userName: "closedDeck",
+    countCards: 31,
+    cards: closedCardsElements,
+  };
+
+  let openDeckElements = {
+    userId: "00000012",
+    userName: "openDeck",
+    countCards: 1,
+    cards: openCardsElements,
+  };
+
+  let firsTemporaryDeckElements = {
+    userId: "00000013",
+    userName: "firsTemporaryDeck",
+    countCards: 1,
+    cards: firsTemporaryCardsElements,
+  };
+
   
+  let handCards0Data = [{ suit: "♥", nominal: "10" }];
+
+  let handCards0Elements = handCards0Data.map((el) => (
+    <Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />
+  ));
+
+  let handDeck0Elements = {
+    userId: "00000001",
+    userName: "Гость 77777777",
+    userRank: "666",
+    countCards: 2,
+    cards: handCards0Elements,
+  };
+  
+  let handCards1Data = [{ suit: "♥", nominal: "10" }];
+
+  let handCards1Elements = handCards1Data.map((el) => (
+    <Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />
+  ));
+  
+  let handDeck1Elements = {
+    userId: "00000002",
+    userName: "Гость 88888888",
+    userRank: "999",
+    countCards: 2,
+    cards: handCards1Elements,
+  };
+
   return (
     <div id="gameField" className="content pictureCard shirtCard">
       <div>
         <Deck
           classCount="deckCount closedDeckCount"
-          valueCount={decksData[0].countCards}
+          valueCount={closedDeckElements.countCards}
           classCards="decks closedDeckCards"
-          cards={<Card classCard="card back" />}
+          cards={closedDeckElements.cards}
         />
         <Deck
           classCount="deckCount openDeckCount"
-          valueCount={decksData[1].countCards}
+          valueCount={openDeckElements.countCards}
           classCards="decks openDeckCards"
-          cards={<Card classCard="card" />}
+          cards={openDeckElements.cards}
         />
         <Deck
           classCount="deckCount firsTemporaryDeckCount"
-          valueCount={decksData[2].countCards}
-          classCards="decks firsTemporaryDeck"
-          cards={<Card classCard="card" />}
+          valueCount={firsTemporaryDeckElements.countCards}
+          classCards="decks firsTemporaryDeckCards"
+          cards={firsTemporaryDeckElements.cards}
         />
       </div>
       <div>
         <UserHand
           classUserName="userNames userName0"
-          userId={usersData[0].userId}
-          valueUser={usersData[0].userName}
+          userId={handDeck0Elements.userId}
+          valueUser={handDeck0Elements.userName}
           classUserRank="userRank"
-          valueUserRank={usersData[0].userRank}
+          valueUserRank={handDeck0Elements.userRank}
           classCount="hand handCount0"
-          valueCount={usersData[0].countCards}
+          valueCount={handDeck0Elements.countCards}
           classCards="hand handCards0"
-          cards={<Card classCard="card back" />}
+          cards={handDeck0Elements.cards}
         />
         <UserHand
           classUserName="userNames userName1"
-          userId={usersData[1].userId}
-          valueUser={usersData[1].userName}
+          userId={handDeck1Elements.userId}
+          valueUser={handDeck1Elements.userName}
           classUserRank="userRank"
-          valueUserRank={usersData[1].userRank} 
+          valueUserRank={handDeck1Elements.userRank}
           classCount="hand handCount1"
-          valueCount={usersData[1].countCards}
+          valueCount={handDeck1Elements.countCards}
           classCards="hand handCards1"
-          cards={<Card classCard="card back" />}
+          cards={handDeck1Elements.cards}
         />
       </div>
       <Action classAction="action" valueAction="Ваш ход" />

@@ -9,7 +9,7 @@ import GameField from "./сomponents/game/gameField";
 import Header from "./сomponents/game/header";
 import Main from "./сomponents/main/main";
 
-function App() {
+function App(props) {
   return (
     <div>
       <BrowserRouter>
