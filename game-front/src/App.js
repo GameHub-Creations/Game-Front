@@ -13,9 +13,24 @@ function App(props) {
   return (
     <div>
       <BrowserRouter>
-        <Header classHeaderMenu="headerMenu" classMenuItem="menuItem" classActive="active"/>
+        <Header
+          classHeaderMenu="headerMenu"
+          classMenuItem="menuItem"
+          classActive="active"
+        />
         <Routes>
-          <Route path="/" element={<GameField />} />
+          <Route
+            path="/"
+            element={
+              <GameField
+                closedDeckElements={props.closedDeckElements}
+                openDeckElements={props.openDeckElements}
+                firsTemporaryDeckElements={props.firsTemporaryDeckElements}
+                handDeck0Elements={props.handDeck0Elements}
+                handDeck1Elements={props.handDeck1Elements}
+              />
+            }
+          />
           <Route path="/main" element={<Main />} />
           <Route path="/avatar" element={<Avatar />} />
         </Routes>
