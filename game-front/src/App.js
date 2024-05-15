@@ -1,5 +1,5 @@
-import "./styles/game/gameField.css";
 import "./App.css";
+import "./styles/game/gameField.css";
 import "./styles/game/header.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -23,11 +23,11 @@ function App(props) {
             path="/"
             element={
               <GameField
-                closedDeckElements={props.closedDeckData}
-                openDeckElements={props.openDeckData}
-                firsTemporaryDeckElements={props.firsTemporaryDeckData}
-                handDeck0Elements={props.handDeck0Data}
-                handDeck1Elements={props.handDeck1Data}
+                closedDeckData={props.closedDeckData}
+                openDeckData={props.openDeckData}
+                firsTemporaryDeckData={props.firsTemporaryDeckData}
+                handDeck0Data={props.handDeck0Data}
+                handDeck1Data={props.handDeck1Data}
                 valueActionData={props.valueActionData}
                 valueButtonData={props.valueButtonData}
               />

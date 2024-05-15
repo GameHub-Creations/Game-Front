@@ -1,13 +1,13 @@
 import React from "react";
 import UserData from "./userData";
 
-function UserHand(props) {
+function UserDeck(props) {
   return (
     <div>
       <UserData
         classUserName={props.classUserName}
-        userId={props.userId}
-        valueUser={props.valueUser}
+        id={props.id}
+        valueName={props.valueName}
         classUserRank={props.classUserRank}
         valueUserRank={props.valueUserRank}
       />
@@ -17,4 +17,4 @@ function UserHand(props) {
   );
 }
 
-export default UserHand;
+export default UserDeck;

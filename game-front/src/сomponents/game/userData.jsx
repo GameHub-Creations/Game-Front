@@ -3,8 +3,8 @@ import UserRank from "./userRank";
 
 function UserData(props) {
   return (
-    <div className={props.classUserName} userId={props.userId}>
-      {props.valueUser}
+    <div className={props.classUserName} id={props.id}>
+      {props.valueName}
       <UserRank
         classUserRank={props.classUserRank}
         valueUserRank={props.valueUserRank}

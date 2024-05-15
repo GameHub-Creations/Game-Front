@@ -1,63 +1,95 @@
+import "./../../styles/game/action.css";
+import "./../../styles/game/button.css";
 import "./../../styles/game/deck.css";
 import "./../../styles/game/userData.css";
-import "./../../styles/game/userHand.css";
+import "./../../styles/game/userDeck.css";
 import "./../../styles/game/userRank.css";
-import "./../../styles/game/button.css";
-import "./../../styles/game/action.css";
 
 import Action from "./action";
 import Button from "./button";
-import Card from "./card"
+import Card from "./card";
 import Deck from "./Deck";
 import React from "react";
-import UserHand from "./userHand";
+import UserDeck from "./userDeck";
 
 function GameField(props) {
-  
   return (
     <div id="gameField" className="content pictureCard shirtCard">
       <div>
         <Deck
+          id={props.closedDeckData.id}
           classCount="deckCount closedDeckCount"
-          valueCount={props.closedDeckElements.countCards}
+          valueCount={props.closedDeckData.countCards}
           classCards="decks closedDeckCards"
-          cards={props.closedDeckElements.cards.map((el) => (<Card classCard="card back" dataSuit={el.suit} dataNominal={el.nominal} />))}
+          cards={props.closedDeckData.cards.map((el) => (
+            <Card
+              classCard="card back"
+              dataSuit={el.suit}
+              dataNominal={el.nominal}
+            />
+          ))}
         />
         <Deck
+          id={props.openDeckData.id}
           classCount="deckCount openDeckCount"
-          valueCount={props.openDeckElements.countCards}
+          valueCount={props.openDeckData.countCards}
           classCards="decks openDeckCards"
-          cards={props.openDeckElements.cards.map((el) => (<Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />))}
+          cards={props.openDeckData.cards.map((el) => (
+            <Card
+              classCard="card"
+              dataSuit={el.suit}
+              dataNominal={el.nominal}
+            />
+          ))}
         />
         <Deck
+          id={props.firsTemporaryDeckData.id}
           classCount="deckCount firsTemporaryDeckCount"
-          valueCount={props.firsTemporaryDeckElements.countCards}
+          valueCount={props.firsTemporaryDeckData.countCards}
           classCards="decks firsTemporaryDeckCards"
-          cards={props.firsTemporaryDeckElements.cards.map((el) => (<Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />))}
+          cards={props.firsTemporaryDeckData.cards.map((el) => (
+            <Card
+              classCard="card"
+              dataSuit={el.suit}
+              dataNominal={el.nominal}
+            />
+          ))}
         />
       </div>
       <div>
-        <UserHand
+        <UserDeck
           classUserName="userNames userName0"
-          userId={props.handDeck0Elements.userId}
-          valueUser={props.handDeck0Elements.userName}
+          id={props.handDeck0Data.id}
+          valueName={props.handDeck0Data.name}
           classUserRank="userRank"
-          valueUserRank={props.handDeck0Elements.userRank}
+          valueUserRank={props.handDeck0Data.userRank}
           classCount="hand handCount0"
-          valueCount={props.handDeck0Elements.countCards}
+          valueCount={props.handDeck0Data.countCards}
           classCards="hand handCards0"
-          cards={props.handDeck0Elements.cards.map((el) => (<Card classCard="card" dataSuit={el.suit} dataNominal={el.nominal} />))}
+          cards={props.handDeck0Data.cards.map((el) => (
+            <Card
+              classCard="card"
+              dataSuit={el.suit}
+              dataNominal={el.nominal}
+            />
+          ))}
         />
-        <UserHand
+        <UserDeck
           classUserName="userNames userName1"
-          userId={props.handDeck1Elements.userId}
-          valueUser={props.handDeck1Elements.userName}
+          id={props.handDeck1Data.id}
+          valueName={props.handDeck1Data.name}
           classUserRank="userRank"
-          valueUserRank={props.handDeck1Elements.userRank}
+          valueUserRank={props.handDeck1Data.userRank}
           classCount="hand handCount1"
-          valueCount={props.handDeck1Elements.countCards}
+          valueCount={props.handDeck1Data.countCards}
           classCards="hand handCards1"
-          cards={props.handDeck1Elements.cards.map((el) => (<Card classCard="card back" dataSuit={el.suit} dataNominal={el.nominal} />))}
+          cards={props.handDeck1Data.cards.map((el) => (
+            <Card
+              classCard="card back"
+              dataSuit={el.suit}
+              dataNominal={el.nominal}
+            />
+          ))}
         />
       </div>
       <Action classAction="action" valueAction={props.valueActionData} />
