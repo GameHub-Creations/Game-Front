@@ -23,11 +23,13 @@ function App(props) {
             path="/"
             element={
               <GameField
-                closedDeckElements={props.closedDeckElements}
-                openDeckElements={props.openDeckElements}
-                firsTemporaryDeckElements={props.firsTemporaryDeckElements}
-                handDeck0Elements={props.handDeck0Elements}
-                handDeck1Elements={props.handDeck1Elements}
+                closedDeckElements={props.closedDeckData}
+                openDeckElements={props.openDeckData}
+                firsTemporaryDeckElements={props.firsTemporaryDeckData}
+                handDeck0Elements={props.handDeck0Data}
+                handDeck1Elements={props.handDeck1Data}
+                valueActionData={props.valueActionData}
+                valueButtonData={props.valueButtonData}
               />
             }
           />
