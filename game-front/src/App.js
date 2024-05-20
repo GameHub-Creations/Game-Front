@@ -31,6 +31,9 @@ function App(props) {
                 handDeck1Data={props.handDeck1Data}
                 valueActionData={props.valueActionData}
                 valueButtonData={props.valueButtonData}
+                
+                clickButton={props.clickButton}
+                clickCard={props.clickCard}
               />
             }
           />

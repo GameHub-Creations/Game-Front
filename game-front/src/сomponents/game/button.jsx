@@ -1,12 +1,8 @@
 import React from "react";
 
 function Button(props) {
-  function onButtonClick() {
-    return alert("click on button");
-  }
-
   return (
-    <button onClick={onButtonClick} className={props.classButton}>
+    <button className={props.classButton} onClick={props.clickButton}>
       {props.valueButton}
     </button>
   );

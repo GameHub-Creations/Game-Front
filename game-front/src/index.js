@@ -1,10 +1,11 @@
 import "./index.css";
 
+import { clickButton, clickCard, state } from "./state";
+
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import state from "./state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +18,8 @@ root.render(
       handDeck1Data={state.gamePage.handDeck1Data}
       valueActionData={state.gamePage.valueActionData}
       valueButtonData={state.gamePage.valueButtonData}
+      clickButton={clickButton}
+      clickCard={clickCard}
     />
   </React.StrictMode>
 );
