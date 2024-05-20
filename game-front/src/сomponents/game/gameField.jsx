@@ -13,12 +13,14 @@ import React from "react";
 import UserDeck from "./userDeck";
 
 function GameField(props) {
+
   return (
     <div id="gameField" className="content pictureCard shirtCard">
       <div>
         <Deck
-          id={props.closedDeckData.id}
           classCount="deckCount closedDeckCount"
+          deckId={props.closedDeckData.deckId}
+          userId={props.closedDeckData.userId}
           valueCount={props.closedDeckData.countCards}
           classCards="decks closedDeckCards"
           cards={props.closedDeckData.cards.map((el) => (
@@ -30,8 +32,9 @@ function GameField(props) {
           ))}
         />
         <Deck
-          id={props.openDeckData.id}
           classCount="deckCount openDeckCount"
+          deckId={props.openDeckData.deckId}
+          userId={props.openDeckData.userId}
           valueCount={props.openDeckData.countCards}
           classCards="decks openDeckCards"
           cards={props.openDeckData.cards.map((el) => (
@@ -43,8 +46,9 @@ function GameField(props) {
           ))}
         />
         <Deck
-          id={props.firsTemporaryDeckData.id}
           classCount="deckCount firsTemporaryDeckCount"
+          userId={props.handDeck1Data.userId}
+          deckId={props.handDeck1Data.deckId}
           valueCount={props.firsTemporaryDeckData.countCards}
           classCards="decks firsTemporaryDeckCards"
           cards={props.firsTemporaryDeckData.cards.map((el) => (
@@ -59,8 +63,9 @@ function GameField(props) {
       <div>
         <UserDeck
           classUserName="userNames userName0"
-          id={props.handDeck0Data.id}
-          valueName={props.handDeck0Data.name}
+          userId={props.handDeck1Data.userId}
+          deckId={props.handDeck1Data.deckId}
+          valueUserName={props.handDeck0Data.name}
           classUserRank="userRank"
           valueUserRank={props.handDeck0Data.userRank}
           classCount="hand handCount0"
@@ -69,15 +74,18 @@ function GameField(props) {
           cards={props.handDeck0Data.cards.map((el) => (
             <Card
               classCard="card"
-              dataSuit={el.suit}
-              dataNominal={el.nominal}
+              userId={props.handDeck0Data.userId}
+              deckId={props.handDeck0Data.deckId}
+              cardSuit={el.suit}
+              cardNominal={el.nominal}
             />
           ))}
         />
         <UserDeck
           classUserName="userNames userName1"
-          id={props.handDeck1Data.id}
-          valueName={props.handDeck1Data.name}
+          userId={props.handDeck1Data.userId}
+          deckId={props.handDeck1Data.deckId}
+          valueUserName={props.handDeck1Data.name}
           classUserRank="userRank"
           valueUserRank={props.handDeck1Data.userRank}
           classCount="hand handCount1"
@@ -86,8 +94,10 @@ function GameField(props) {
           cards={props.handDeck1Data.cards.map((el) => (
             <Card
               classCard="card back"
-              dataSuit={el.suit}
-              dataNominal={el.nominal}
+              userId={props.handDeck1Data.userId}
+              deckId={props.handDeck1Data.deckId}
+              cardSuit={el.suit}
+              cardNominal={el.nominal}
             />
           ))}
         />

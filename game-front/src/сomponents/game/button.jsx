@@ -1,7 +1,15 @@
 import React from "react";
 
 function Button(props) {
-  return <button className={props.classButton}>{props.valueButton}</button>;
+  function onButtonClick() {
+    return alert("click on button");
+  }
+
+  return (
+    <button onClick={onButtonClick} className={props.classButton}>
+      {props.valueButton}
+    </button>
+  );
 }
 
 export default Button;

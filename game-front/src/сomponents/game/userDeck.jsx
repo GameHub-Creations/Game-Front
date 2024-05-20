@@ -6,8 +6,9 @@ function UserDeck(props) {
     <div>
       <UserData
         classUserName={props.classUserName}
-        id={props.id}
-        valueName={props.valueName}
+        deckId={props.deckId}
+        userId={props.userId}
+        valueUserName={props.valueUserName}
         classUserRank={props.classUserRank}
         valueUserRank={props.valueUserRank}
       />

@@ -1,38 +1,38 @@
-// let closedCardsData = [{ suit: "♥", nominal: "10" }];
-
-// let openCardsData = [{ suit: "♥", nominal: "10" }];
-
-// let firsTemporaryCardsData = [{ suit: "♥", nominal: "10" }];
 
 let state = {
   gamePage: {
     closedDeckData: {
-      id: "00000011",
+      userId: null,
+      deckId: "00000011",
       name: "Закрытая колода",
       countCards: 31,
       cards: [{ suit: "♥", nominal: "10" }],
     },
     openDeckData: {
-      id: "00000012",
+      userId: null,
+      deckId: "00000012",
       name: "Открытая колода",
       countCards: 1,
       cards: [{ suit: "♥", nominal: "10" }],
     },
     firsTemporaryDeckData: {
-      id: "00000013",
+      userId: null,
+      deckId: "00000013",
       name: "Временная колода",
       countCards: 1,
       cards: [{ suit: "♥", nominal: "10" }],
     },
     handDeck0Data: {
-      id: "00000001",
+      userId: "10000000",
+      deckId: "00000001",
       name: "Гость 77777777",
       userRank: "666",
       countCards: 2,
       cards: [{ suit: "♥", nominal: "10" }],
     },
     handDeck1Data: {
-      id: "00000002",
+      userId: "20000000",
+      deckId: "00000002",
       name: "Гость 88888888",
       userRank: "999",
       countCards: 2,
@@ -44,47 +44,3 @@ let state = {
 };
 
 export default state
-// let closedDeckData = {
-//   userId: "00000011",
-//   userName: "closedDeck",
-//   countCards: 31,
-//   cards: [{ suit: "♥", nominal: "10" }],
-// };
-
-// let openDeckData = {
-//   userId: "00000012",
-//   userName: "openDeck",
-//   countCards: 1,
-//   cards: [{ suit: "♥", nominal: "10" }],
-// };
-
-// let firsTemporaryDeckData = {
-//   userId: "00000013",
-//   userName: "firsTemporaryDeck",
-//   countCards: 1,
-//   cards: [{ suit: "♥", nominal: "10" }],
-// };
-
-// // let handCards0Data = [{ suit: "♥", nominal: "10" }];
-
-// let handDeck0Data = {
-//   userId: "00000001",
-//   userName: "Гость 77777777",
-//   userRank: "666",
-//   countCards: 2,
-//   cards: [{ suit: "♥", nominal: "10" }],
-// };
-
-// // let handCards1Data = [{ suit: "♥", nominal: "10" }];
-
-// let handDeck1Data = {
-//   userId: "00000002",
-//   userName: "Гость 88888888",
-//   userRank: "999",
-//   countCards: 2,
-//   cards: [{ suit: "♥", nominal: "10" }],
-// };
-
-// let valueActionData = "Ваш ход";
-
-// let valueButtonData = "Взять карты";

@@ -10,6 +10,7 @@ import Header from "./сomponents/game/header";
 import Main from "./сomponents/main/main";
 
 function App(props) {
+
   return (
     <div>
       <BrowserRouter>
