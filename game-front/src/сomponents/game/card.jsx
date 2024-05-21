@@ -6,12 +6,14 @@ function Card(props) {
 
   return (
     <div
+
       className={props.classCard}
       userId={props.userId}
       deckId={props.deckId}
       cardSuit={props.cardSuit}
       cardNominal={props.cardNominal}
-      onClick={props.clickCard}
+      onClick={props.clickCard }
+      
     ></div>
   );
 }

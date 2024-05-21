@@ -8,6 +8,7 @@ import "./../../styles/game/userRank.css";
 import Action from "./action";
 import Button from "./button";
 import Card from "./card";
+import Chat from "./chat";
 import Deck from "./Deck";
 import React from "react";
 import UserDeck from "./userDeck";
@@ -118,6 +119,7 @@ function GameField(props) {
         valueButton={props.valueButtonData}
         clickButton={props.clickButton}
       />
+      <Chat />
     </div>
   );
 }

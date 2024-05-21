@@ -1,3 +1,5 @@
+import { Component, createRef } from 'react';
+
 export let state = {
   gamePage: {
     closedDeckData: {
@@ -46,7 +48,11 @@ export function clickButton() {
   return alert("click on button");
 }
 
-export function clickCard(data) {
+export function clickCard(value) {
+  
+  let newData = createRef();
+  debugger
+  
   let cardData = {};
   cardData["userId"] = data["userId"];
   cardData["deckId"] = data["deckId"];
