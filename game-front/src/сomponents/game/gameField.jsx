@@ -4,11 +4,14 @@ import "./../../styles/game/deck.css";
 import "./../../styles/game/userData.css";
 import "./../../styles/game/userDeck.css";
 import "./../../styles/game/userRank.css";
+import "./../../styles/game/chatComponents/message.css";
+import "./../../styles/game/chatComponents/chat.css";
+import "./../../styles/game/chatComponents/dialogs.css";
 
 import Action from "./action";
 import Button from "./button";
 import Card from "./card";
-import Chat from "./chat";
+import Chat from "./chatComponents/chat";
 import Deck from "./Deck";
 import React from "react";
 import UserDeck from "./userDeck";
@@ -119,7 +122,28 @@ function GameField(props) {
         valueButton={props.valueButtonData}
         clickButton={props.clickButton}
       />
-      <Chat />
+      {/* {props.dialogsData.map((el) => (
+        <Chat
+          classChat="chat"
+          classChatTitle="chatTitle"
+          classChatDialogs="chatDialogs"
+          classChatNamePlayer="chatNamePlayer"
+          valueChatNamePlayer={el.name}
+          classChatMessage="chatMessage"
+          valueChatMessage={el.message}
+          classChatInput="chatInput"
+        />
+      ))} */}
+
+      <Chat
+        classChat="chat"
+        classChatTitle="chatTitle"
+        classChatDialogs="chatDialogs"
+        classChatNamePlayer="chatNamePlayer"
+        dialogsData={props.dialogsData}
+        classChatMessage="chatMessage"
+        classChatInput="chatInput"
+      />
     </div>
   );
 }

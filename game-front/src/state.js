@@ -1,4 +1,4 @@
-import { Component, createRef } from 'react';
+import { Component, createRef } from "react";
 
 export let state = {
   gamePage: {
@@ -41,6 +41,16 @@ export let state = {
     },
     valueActionData: "Ваш ход",
     valueButtonData: "Взять карты",
+    dialogsData: [
+      {
+        name: "Гость 88888888",
+        message: "Я тебя разматаю",
+      },
+      {
+        name: "Гость 77777777",
+        message: "Иди говна поешь",
+      },
+    ],
   },
 };
 
@@ -49,14 +59,13 @@ export function clickButton() {
 }
 
 export function clickCard(value) {
-  
   let newData = createRef();
-  debugger
-  
-  let cardData = {};
-  cardData["userId"] = data["userId"];
-  cardData["deckId"] = data["deckId"];
-  cardData["cardSuit"] = data["cardSuit"];
-  cardData["cardNominal"] = data["cardNominal"];
-  return alert(cardData["deckId"]);
+  debugger;
+
+  // let cardData = {};
+  // cardData["userId"] = data["userId"];
+  // cardData["deckId"] = data["deckId"];
+  // cardData["cardSuit"] = data["cardSuit"];
+  // cardData["cardNominal"] = data["cardNominal"];
+  // return alert(cardData["deckId"]);
 }

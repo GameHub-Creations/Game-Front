@@ -18,6 +18,7 @@ root.render(
       handDeck1Data={state.gamePage.handDeck1Data}
       valueActionData={state.gamePage.valueActionData}
       valueButtonData={state.gamePage.valueButtonData}
+      dialogsData={state.gamePage.dialogsData}
       clickButton={clickButton}
       clickCard={clickCard}
     />

@@ -31,7 +31,7 @@ function App(props) {
                 handDeck1Data={props.handDeck1Data}
                 valueActionData={props.valueActionData}
                 valueButtonData={props.valueButtonData}
-                
+                dialogsData={props.dialogsData}
                 clickButton={props.clickButton}
                 clickCard={props.clickCard}
               />
