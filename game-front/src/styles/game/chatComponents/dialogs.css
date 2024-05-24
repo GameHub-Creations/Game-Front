@@ -1,17 +1,18 @@
 /* --------------- Стили диалога чата --------------- */
 
 .chatDialogs {
-  /* высота области диалога */
-  height: 250px;
+  /* относительное позиционирование элемента */
+  position: absolute;
   /* отступы текста */
   padding: 1px;
-  /* шрифт текста */
-  font-style: italic;
-  /* размера шрифта текста */
-  font-size: 70%;
   /* выравнивание текста по центру */
   text-align: left;
+  /* выравнивание по высоте  (сдвиг вниз)*/
+  top: 10%;
+  /* выравнивание по ширине (сдвиг влево) */
+  left: 3%;
 
   display: grid;
-  grid-template-rows: repeat(10, 20px);
+  grid-template-rows: repeat(12, 20px);
+  overflow: hidden;
 }

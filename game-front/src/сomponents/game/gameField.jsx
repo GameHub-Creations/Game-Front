@@ -122,19 +122,6 @@ function GameField(props) {
         valueButton={props.valueButtonData}
         clickButton={props.clickButton}
       />
-      {/* {props.dialogsData.map((el) => (
-        <Chat
-          classChat="chat"
-          classChatTitle="chatTitle"
-          classChatDialogs="chatDialogs"
-          classChatNamePlayer="chatNamePlayer"
-          valueChatNamePlayer={el.name}
-          classChatMessage="chatMessage"
-          valueChatMessage={el.message}
-          classChatInput="chatInput"
-        />
-      ))} */}
-
       <Chat
         classChat="chat"
         classChatTitle="chatTitle"
