@@ -21,6 +21,8 @@ root.render(
       dialogsData={state.gamePage.dialogsData}
       clickButton={clickButton}
       clickCard={clickCard}
+      newMessage={newMessage}
+      addMessage={addMessage}
     />
   </React.StrictMode>
 );
