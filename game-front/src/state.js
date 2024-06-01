@@ -44,16 +44,19 @@ export let state = {
     },
     valueActionData: "Ваш ход",
     valueButtonData: "Взять карты",
-    dialogsData: [
-      {
-        name: "Гость 88888888",
-        message: "Я тебя разматаю",
-      },
-      {
-        name: "Гость 77777777",
-        message: "Иди говна поешь",
-      },
-    ],
+    chat: {
+      dialogsData: [
+        {
+          name: "Гость 88888888",
+          message: "Я тебя разматаю",
+        },
+        {
+          name: "Гость 77777777",
+          message: "Иди говна поешь",
+        },
+      ],
+      inputData: "",
+    },
   },
 };
 
@@ -66,13 +69,13 @@ export function clickCard(value) {
   let newData = createRef();
 }
 
-export let newMessage = React.createRef();
-
-export function addMessage(event) {
+export function addMessage(text) {
+  state.gamePage.chat.dialogsData.push({ name: "newUser", message: text });
+  state.gamePage.chat.inputData = "";
+  rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
+}
+export function changeMessage(text) {
   // Добавляет сообщение по нажатию 'Enter' в поле ввода
-  if (event.key === "Enter") {
-    let text = newMessage.current.value;
-    state.gamePage.dialogsData.push({ name: "newUser", message: text });
-    rerenderEntireTree(state, clickButton, clickCard, newMessage, addMessage);
-  }
+  state.gamePage.chat.inputData = text;
+  rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
 }

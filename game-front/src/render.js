@@ -9,8 +9,8 @@ export let rerenderEntireTree = (
   state,
   clickButton,
   clickCard,
-  newMessage,
-  addMessage
+  addMessage,
+  changeMessage,
 ) => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
@@ -23,11 +23,12 @@ export let rerenderEntireTree = (
         handDeck1Data={state.gamePage.handDeck1Data}
         valueActionData={state.gamePage.valueActionData}
         valueButtonData={state.gamePage.valueButtonData}
-        dialogsData={state.gamePage.dialogsData}
+        dialogsData={state.gamePage.chat.dialogsData}
+        inputData={state.gamePage.chat.inputData}
         clickButton={clickButton}
         clickCard={clickCard}
-        newMessage={newMessage}
         addMessage={addMessage}
+        changeMessage={changeMessage}
       />
     </React.StrictMode>
   );

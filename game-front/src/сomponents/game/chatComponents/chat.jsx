@@ -2,6 +2,24 @@ import Dialogs from "./dialogs";
 import React from "react";
 
 function Chat(props) {
+  let ref = React.createRef();
+
+  function addMessage(event) {
+    // Добавляет сообщение по нажатию 'Enter' в поле ввода
+    if (event.key === "Enter") {
+      let text = ref.current.value;
+      props.addMessage(text);
+
+    }
+  }
+  
+  function changeMessage() {
+    // Добавляет сообщение по нажатию 'Enter' в поле ввода
+    let text = ref.current.value;
+    props.changeMessage(text)
+
+  }
+
   return (
     <div className={props.classChat}>
       <div className={props.classChatTitle}>
@@ -16,9 +34,11 @@ function Chat(props) {
       <div>
         <textarea
           className={props.classChatInput}
-          placeholder='Обсудить со всеми'
-          ref={props.newMessage}
-          onKeyDown={props.addMessage}
+          placeholder="Обсудить со всеми"
+          ref={ref}
+          onKeyDown={addMessage}
+          value={props.inputData}
+          onChange={changeMessage}
         ></textarea>
       </div>
     </div>

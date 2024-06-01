@@ -1,5 +1,5 @@
-import { addMessage, clickButton, clickCard, newMessage, state } from "./state";
+import { addMessage, changeMessage, clickButton, clickCard, state } from "./state";
 
 import { rerenderEntireTree } from "./render";
 
-rerenderEntireTree(state, clickButton, clickCard, newMessage, addMessage);
+rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
