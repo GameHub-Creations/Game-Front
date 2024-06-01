@@ -1,5 +1,8 @@
 import { Component, createRef } from "react";
 
+import React from "react";
+import { rerenderEntireTree } from "./render";
+
 export let state = {
   gamePage: {
     closedDeckData: {
@@ -59,13 +62,17 @@ export function clickButton() {
 }
 
 export function clickCard(value) {
+  // Создает ссылку на объект
   let newData = createRef();
-  debugger;
+}
 
-  // let cardData = {};
-  // cardData["userId"] = data["userId"];
-  // cardData["deckId"] = data["deckId"];
-  // cardData["cardSuit"] = data["cardSuit"];
-  // cardData["cardNominal"] = data["cardNominal"];
-  // return alert(cardData["deckId"]);
+export let newMessage = React.createRef();
+
+export function addMessage(event) {
+  // Добавляет сообщение по нажатию 'Enter' в поле ввода
+  if (event.key === "Enter") {
+    let text = newMessage.current.value;
+    state.gamePage.dialogsData.push({ name: "newUser", message: text });
+    rerenderEntireTree(state, clickButton, clickCard, newMessage, addMessage);
+  }
 }

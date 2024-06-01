@@ -34,6 +34,8 @@ function App(props) {
                 dialogsData={props.dialogsData}
                 clickButton={props.clickButton}
                 clickCard={props.clickCard}
+                newMessage={props.newMessage}
+                addMessage={props.addMessage}
               />
             }
           />

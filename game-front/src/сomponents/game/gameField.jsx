@@ -130,6 +130,8 @@ function GameField(props) {
         dialogsData={props.dialogsData}
         classChatMessage="chatMessage"
         classChatInput="chatInput"
+        newMessage={props.newMessage}
+        addMessage={props.addMessage}
       />
     </div>
   );

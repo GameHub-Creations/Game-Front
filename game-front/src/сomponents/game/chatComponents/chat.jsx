@@ -16,8 +16,9 @@ function Chat(props) {
       <div>
         <textarea
           className={props.classChatInput}
-          placeholder="Обсудить со всеми"
-          ref={React.createRef()}
+          placeholder='Обсудить со всеми'
+          ref={props.newMessage}
+          onKeyDown={props.addMessage}
         ></textarea>
       </div>
     </div>
