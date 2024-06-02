@@ -55,7 +55,7 @@ export let state = {
           message: "Иди говна поешь",
         },
       ],
-      inputData: "",
+      inputMessageData: "",
     },
   },
 };
@@ -69,13 +69,16 @@ export function clickCard(value) {
   let newData = createRef();
 }
 
-export function addMessage(text) {
-  state.gamePage.chat.dialogsData.push({ name: "newUser", message: text });
-  state.gamePage.chat.inputData = "";
+export function addMessage() {
+  state.gamePage.chat.dialogsData.push({
+    name: "newUser",
+    message: state.gamePage.chat.inputMessageData,
+  });
+  state.gamePage.chat.inputMessageData = "";
   rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
 }
 export function changeMessage(text) {
   // Добавляет сообщение по нажатию 'Enter' в поле ввода
-  state.gamePage.chat.inputData = text;
+  state.gamePage.chat.inputMessageData = text;
   rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
 }

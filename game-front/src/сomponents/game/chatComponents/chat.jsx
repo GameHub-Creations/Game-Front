@@ -7,17 +7,14 @@ function Chat(props) {
   function addMessage(event) {
     // Добавляет сообщение по нажатию 'Enter' в поле ввода
     if (event.key === "Enter") {
-      let text = ref.current.value;
-      props.addMessage(text);
-
+      props.addMessage();
     }
   }
-  
+
   function changeMessage() {
     // Добавляет сообщение по нажатию 'Enter' в поле ввода
     let text = ref.current.value;
-    props.changeMessage(text)
-
+    props.changeMessage(text);
   }
 
   return (
@@ -37,7 +34,7 @@ function Chat(props) {
           placeholder="Обсудить со всеми"
           ref={ref}
           onKeyDown={addMessage}
-          value={props.inputData}
+          value={props.inputMessageData}
           onChange={changeMessage}
         ></textarea>
       </div>

@@ -32,7 +32,7 @@ function App(props) {
                 valueActionData={props.valueActionData}
                 valueButtonData={props.valueButtonData}
                 dialogsData={props.dialogsData}
-                inputData={props.inputData}
+                inputMessageData={props.inputMessageData}
                 clickButton={props.clickButton}
                 clickCard={props.clickCard}
                 addMessage={props.addMessage}
