@@ -71,6 +71,7 @@ export const clickCard = (value) => {
 };
 
 export const addMessage = () => {
+  // Добавляет сообщение в диалог чата
   state.gamePage.chat.dialogsData.push({
     name: "newUser",
     message: state.gamePage.chat.inputMessageData,
@@ -78,13 +79,13 @@ export const addMessage = () => {
   state.gamePage.chat.inputMessageData = "";
   rerenderEntireTree(state);
 };
-export const changeMessage = (text) => {
-  // Добавляет сообщение по нажатию 'Enter' в поле ввода
-  state.gamePage.chat.inputMessageData = text;
-  rerenderEntireTree(state);
-};
+export const changeMessage = (text) =>
+  // Добавляет текст введенный в поле ввода
+  (state.gamePage.chat.inputMessageData = text);
+rerenderEntireTree(state);
 
 export const subscribe = (observer) => {
+  // Перезапускает страницу при внесении изменений
   rerenderEntireTree = observer;
 };
 

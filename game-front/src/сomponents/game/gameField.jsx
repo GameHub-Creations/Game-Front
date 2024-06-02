@@ -125,12 +125,14 @@ function GameField(props) {
       <Chat
         classChat="chat"
         classChatTitle="chatTitle"
+        
         classChatDialogs="chatDialogs"
         classChatNamePlayer="chatNamePlayer"
-        dialogsData={props.dialogsData}
-        inputMessageData={props.inputMessageData}
         classChatMessage="chatMessage"
+        dialogsData={props.dialogsData}
+        
         classChatInput="chatInput"
+        inputMessageData={props.inputMessageData}
         addMessage={props.addMessage}
         changeMessage={props.changeMessage}
       />

@@ -21,14 +21,20 @@ let rerenderEntireTree = (state) => {
         closedDeckData={state.gamePage.closedDeckData}
         openDeckData={state.gamePage.openDeckData}
         firsTemporaryDeckData={state.gamePage.firsTemporaryDeckData}
+        
         handDeck0Data={state.gamePage.handDeck0Data}
         handDeck1Data={state.gamePage.handDeck1Data}
+        clickCard={clickCard}
+        
         valueActionData={state.gamePage.valueActionData}
+        
         valueButtonData={state.gamePage.valueButtonData}
+        clickButton={clickButton}
+        
+        
         dialogsData={state.gamePage.chat.dialogsData}
         inputMessageData={state.gamePage.chat.inputMessageData}
-        clickButton={clickButton}
-        clickCard={clickCard}
+   
         addMessage={addMessage}
         changeMessage={changeMessage}
       />

@@ -27,14 +27,20 @@ function App(props) {
                 closedDeckData={props.closedDeckData}
                 openDeckData={props.openDeckData}
                 firsTemporaryDeckData={props.firsTemporaryDeckData}
+
                 handDeck0Data={props.handDeck0Data}
                 handDeck1Data={props.handDeck1Data}
+                clickCard={props.clickCard}
+                
                 valueActionData={props.valueActionData}
+                
                 valueButtonData={props.valueButtonData}
+                clickButton={props.clickButton}
+                
+                
                 dialogsData={props.dialogsData}
                 inputMessageData={props.inputMessageData}
-                clickButton={props.clickButton}
-                clickCard={props.clickCard}
+
                 addMessage={props.addMessage}
                 changeMessage={props.changeMessage}
               />
