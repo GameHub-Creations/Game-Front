@@ -1,7 +1,6 @@
 import { Component, createRef } from "react";
 
 import React from "react";
-import { rerenderEntireTree } from "./render";
 
 export let state = {
   gamePage: {
@@ -60,25 +59,33 @@ export let state = {
   },
 };
 
-export function clickButton() {
-  return alert("click on button");
-}
+let rerenderEntireTree = () => {};
 
-export function clickCard(value) {
+export const clickButton = () => {
+  return alert("click on button");
+};
+
+export const clickCard = (value) => {
   // Создает ссылку на объект
   let newData = createRef();
-}
+};
 
-export function addMessage() {
+export const addMessage = () => {
   state.gamePage.chat.dialogsData.push({
     name: "newUser",
     message: state.gamePage.chat.inputMessageData,
   });
   state.gamePage.chat.inputMessageData = "";
-  rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
-}
-export function changeMessage(text) {
+  rerenderEntireTree(state);
+};
+export const changeMessage = (text) => {
   // Добавляет сообщение по нажатию 'Enter' в поле ввода
   state.gamePage.chat.inputMessageData = text;
-  rerenderEntireTree(state, clickButton, clickCard, addMessage, changeMessage);
-}
+  rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+};
+
+export default state;
