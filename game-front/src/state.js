@@ -79,10 +79,11 @@ export const addMessage = () => {
   state.gamePage.chat.inputMessageData = "";
   rerenderEntireTree(state);
 };
-export const changeMessage = (text) =>
+export const changeMessage = (text) => {
   // Добавляет текст введенный в поле ввода
-  (state.gamePage.chat.inputMessageData = text);
-rerenderEntireTree(state);
+  state.gamePage.chat.inputMessageData = text;
+  rerenderEntireTree(state);
+};
 
 export const subscribe = (observer) => {
   // Перезапускает страницу при внесении изменений
