@@ -24,25 +24,29 @@ function App(props) {
             path="/"
             element={
               <GameField
-                closedDeckData={props.closedDeckData}
-                openDeckData={props.openDeckData}
-                firsTemporaryDeckData={props.firsTemporaryDeckData}
 
-                handDeck0Data={props.handDeck0Data}
-                handDeck1Data={props.handDeck1Data}
+
+                closedDeckData={props.state.gamePage.closedDeckData}
+                openDeckData={props.state.gamePage.openDeckData}
+                firsTemporaryDeckData={props.state.gamePage.firsTemporaryDeckData}
+                
+                handDeck0Data={props.state.gamePage.handDeck0Data}
+                handDeck1Data={props.state.gamePage.handDeck1Data}
                 clickCard={props.clickCard}
                 
-                valueActionData={props.valueActionData}
+                valueActionData={props.state.gamePage.valueActionData}
                 
-                valueButtonData={props.valueButtonData}
+                valueButtonData={props.state.gamePage.valueButtonData}
                 clickButton={props.clickButton}
                 
                 
-                dialogsData={props.dialogsData}
-                inputMessageData={props.inputMessageData}
-
+                dialogsData={props.state.gamePage.chat.dialogsData}
+                inputMessageData={props.state.gamePage.chat.inputMessageData}
+          
                 addMessage={props.addMessage}
                 changeMessage={props.changeMessage}
+
+  
               />
             }
           />

@@ -1,47 +1,28 @@
 import "./index.css";
 
-// import reportWebVitals from "./reportWebVitals";
-import state, {
-  addMessage,
-  changeMessage,
-  clickButton,
-  clickCard,
-  subscribe,
-} from "./state";
-
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import store from "./state";
 
-let rerenderEntireTree = (state) => {
+// import reportWebVitals from "./reportWebVitals";
+
+
+let _callSubscriber = (state) => {
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <React.StrictMode>
       <App
-        closedDeckData={state.gamePage.closedDeckData}
-        openDeckData={state.gamePage.openDeckData}
-        firsTemporaryDeckData={state.gamePage.firsTemporaryDeckData}
-        
-        handDeck0Data={state.gamePage.handDeck0Data}
-        handDeck1Data={state.gamePage.handDeck1Data}
-        clickCard={clickCard}
-        
-        valueActionData={state.gamePage.valueActionData}
-        
-        valueButtonData={state.gamePage.valueButtonData}
-        clickButton={clickButton}
-        
-        
-        dialogsData={state.gamePage.chat.dialogsData}
-        inputMessageData={state.gamePage.chat.inputMessageData}
-   
-        addMessage={addMessage}
-        changeMessage={changeMessage}
+        state={state}
+        clickCard={store.clickCard.bind(store)}
+        clickButton={store.clickButton.bind(store)}
+        addMessage={store.addMessage.bind(store)}
+        changeMessage={store.changeMessage.bind(store)}
       />
     </React.StrictMode>
   );
 };
 
-rerenderEntireTree(state);
+_callSubscriber(store.getState());
 
-subscribe(rerenderEntireTree);
+store.subscribe(_callSubscriber);
