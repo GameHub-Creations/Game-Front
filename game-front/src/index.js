@@ -1,27 +1,24 @@
 import "./index.css";
 
+import store, { state } from "./state";
+
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import store from "./state";
 
-// import reportWebVitals from "./reportWebVitals";
-
-
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
 let _callSubscriber = (state) => {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <React.StrictMode>
-      <App
-        state={state}
-        clickCard={store.clickCard.bind(store)}
-        clickButton={store.clickButton.bind(store)}
-        addMessage={store.addMessage.bind(store)}
-        changeMessage={store.changeMessage.bind(store)}
-      />
-    </React.StrictMode>
+      <BrowserRouter>
+        <App state={state} dispatch={store.dispatch.bind(store)} />
+      </BrowserRouter>
+    </React.StrictMode>,
   );
 };
+
 
 _callSubscriber(store.getState());
 

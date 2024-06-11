@@ -7,14 +7,14 @@ function Chat(props) {
   function addMessage(event) {
     // Добавляет сообщение по нажатию 'Enter' в поле ввода
     if (event.key === "Enter") {
-      props.addMessage();
+      props.dispatch({ type: "Add-Message" });
     }
   }
 
   function changeMessage() {
-    // Добавляет сообщение по нажатию 'Enter' в поле ввода
-    let text = ref.current.value;
-    props.changeMessage(text);
+    // Обновляет текст в поле ввода
+    let newText = ref.current.value;
+    props.dispatch({ type: "Change-Message", newText: newText });
   }
 
   return (

@@ -59,39 +59,37 @@ let store = {
       },
     },
   },
-  getState(){
+  getState() {
     return this._state;
   },
   _callSubscriber() {},
-
-  clickButton() {
-    return alert("click on button");
-  },
-
-  clickCard() {
-    // Создает ссылку на объект
-    let newData = createRef();
-  },
-
-  addMessage() {
-    // Добавляет сообщение в диалог чата
-    this._state.gamePage.chat.dialogsData.push({
-      name: "newUser",
-      message: this._state.gamePage.chat.inputMessageData,
-    });
-    this._state.gamePage.chat.inputMessageData = "";
-    this._callSubscriber(this._state);
-  },
-
-  changeMessage(text) {
-    // Записывает текст введенный в поле ввода
-    this._state.gamePage.chat.inputMessageData = text;
-    this._callSubscriber(this._state);
-  },
-
+ 
   subscribe(observer) {
     // Перезапускает страницу при внесении изменений
     this._callSubscriber = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === "Click-Button") {
+      return console.log("click on button");
+    } 
+    else if (action.type === "Click-Card") {
+      return console.log("click on card");
+    } 
+    else if (action.type === "Add-Message") {
+      // Добавляет сообщение в диалог чата
+      this._state.gamePage.chat.dialogsData.push({
+        name: "newUser",
+        message: this._state.gamePage.chat.inputMessageData,
+      });
+      this._state.gamePage.chat.inputMessageData = "";
+      this._callSubscriber(this._state);
+    } 
+    else if (action.type === "Change-Message") {
+      // Записывает текст введенный в поле ввода
+      this._state.gamePage.chat.inputMessageData = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
 };
 

@@ -33,7 +33,7 @@ function GameField(props) {
               deckId={el.deckId}
               cardSuit={el.suit}
               cardNominal={el.nominal}
-              clickCard={props.clickCard}
+              dispatch={props.dispatch}
             />
           ))}
         />
@@ -50,7 +50,7 @@ function GameField(props) {
               deckId={el.deckId}
               cardSuit={el.suit}
               cardNominal={el.nominal}
-              clickCard={props.clickCard}
+              dispatch={props.dispatch}
             />
           ))}
         />
@@ -67,7 +67,7 @@ function GameField(props) {
               deckId={el.deckId}
               cardSuit={el.suit}
               cardNominal={el.nominal}
-              clickCard={props.clickCard}
+              dispatch={props.dispatch}
             />
           ))}
         />
@@ -90,7 +90,7 @@ function GameField(props) {
               deckId={el.deckId}
               cardSuit={el.suit}
               cardNominal={el.nominal}
-              clickCard={props.clickCard}
+              dispatch={props.dispatch}
             />
           ))}
         />
@@ -111,7 +111,7 @@ function GameField(props) {
               deckId={el.deckId}
               cardSuit={el.suit}
               cardNominal={el.nominal}
-              clickCard={props.clickCard}
+              dispatch={props.dispatch}
             />
           ))}
         />
@@ -120,7 +120,7 @@ function GameField(props) {
       <Button
         classButton="userButton"
         valueButton={props.valueButtonData}
-        clickButton={props.clickButton}
+        dispatch={props.dispatch}
       />
       <Chat
         classChat="chat"
@@ -133,8 +133,7 @@ function GameField(props) {
         
         classChatInput="chatInput"
         inputMessageData={props.inputMessageData}
-        addMessage={props.addMessage}
-        changeMessage={props.changeMessage}
+        dispatch={props.dispatch}
       />
     </div>
   );
