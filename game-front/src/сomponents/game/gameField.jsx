@@ -26,16 +26,14 @@ function GameField(props) {
           userId={props.closedDeckData.userId}
           valueCount={props.closedDeckData.countCards}
           classCards="decks closedDeckCards"
-          cards={props.closedDeckData.cards.map((el) => (
+          cards={
             <Card
-              classCard="card back"
-              userId={el.userId}
-              deckId={el.deckId}
-              cardSuit={el.suit}
-              cardNominal={el.nominal}
+              classCard="card"
+              cardSuit={props.closedDeckData.cards.suit}
+              cardNominal={props.closedDeckData.cards.nominal}
               dispatch={props.dispatch}
             />
-          ))}
+          }
         />
         <Deck
           classCount="deckCount openDeckCount"
@@ -43,56 +41,50 @@ function GameField(props) {
           userId={props.openDeckData.userId}
           valueCount={props.openDeckData.countCards}
           classCards="decks openDeckCards"
-          cards={props.openDeckData.cards.map((el) => (
+          cards={
             <Card
               classCard="card"
-              userId={el.userId}
-              deckId={el.deckId}
-              cardSuit={el.suit}
-              cardNominal={el.nominal}
+              cardSuit={props.openDeckData.cards.suit}
+              cardNominal={props.openDeckData.cards.nominal}
               dispatch={props.dispatch}
             />
-          ))}
+          }
         />
         <Deck
           classCount="deckCount firsTemporaryDeckCount"
-          userId={props.handDeck1Data.userId}
-          deckId={props.handDeck1Data.deckId}
+          userId={props.firsTemporaryDeckData.userId}
+          deckId={props.firsTemporaryDeckData.deckId}
           valueCount={props.firsTemporaryDeckData.countCards}
           classCards="decks firsTemporaryDeckCards"
-          cards={props.firsTemporaryDeckData.cards.map((el) => (
+          cards={
             <Card
               classCard="card"
-              userId={el.userId}
-              deckId={el.deckId}
-              cardSuit={el.suit}
-              cardNominal={el.nominal}
+              cardSuit={props.firsTemporaryDeckData.cards.suit}
+              cardNominal={props.firsTemporaryDeckData.cards.nominal}
               dispatch={props.dispatch}
             />
-          ))}
+          }
         />
       </div>
       <div>
         <UserDeck
           classUserName="userNames userName0"
-          userId={props.handDeck1Data.userId}
-          deckId={props.handDeck1Data.deckId}
+          userId={props.handDeck0Data.userId}
+          deckId={props.handDeck0Data.deckId}
           valueUserName={props.handDeck0Data.name}
           classUserRank="userRank"
           valueUserRank={props.handDeck0Data.userRank}
           classCount="hand handCount0"
           valueCount={props.handDeck0Data.countCards}
           classCards="hand handCards0"
-          cards={props.handDeck0Data.cards.map((el) => (
+          cards={
             <Card
               classCard="card"
-              userId={el.userId}
-              deckId={el.deckId}
-              cardSuit={el.suit}
-              cardNominal={el.nominal}
+              cardSuit={props.handDeck0Data.cards.suit}
+              cardNominal={props.handDeck0Data.cards.nominal}
               dispatch={props.dispatch}
             />
-          ))}
+          }
         />
         <UserDeck
           classUserName="userNames userName1"
@@ -104,16 +96,14 @@ function GameField(props) {
           classCount="hand handCount1"
           valueCount={props.handDeck1Data.countCards}
           classCards="hand handCards1"
-          cards={props.handDeck1Data.cards.map((el) => (
+          cards={
             <Card
-              classCard="card back"
-              userId={el.userId}
-              deckId={el.deckId}
-              cardSuit={el.suit}
-              cardNominal={el.nominal}
+              classCard="card"
+              cardSuit={props.handDeck1Data.cards.suit}
+              cardNominal={props.handDeck1Data.cards.nominal}
               dispatch={props.dispatch}
             />
-          ))}
+          }
         />
       </div>
       <Action classAction="action" valueAction={props.valueActionData} />
@@ -125,12 +115,10 @@ function GameField(props) {
       <Chat
         classChat="chat"
         classChatTitle="chatTitle"
-        
         classChatDialogs="chatDialogs"
         classChatNamePlayer="chatNamePlayer"
         classChatMessage="chatMessage"
         dialogsData={props.dialogsData}
-        
         classChatInput="chatInput"
         inputMessageData={props.inputMessageData}
         dispatch={props.dispatch}

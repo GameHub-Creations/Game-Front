@@ -1,10 +1,16 @@
 import React from "react";
 
 function Button(props) {
+
+  function onClickButton() {
+    return props.dispatch({ type: "Click-Button" })
+  }
+
+  
   return (
     <button
       className={props.classButton}
-      onClick={props.dispatch({ type: "Click-Button" })}
+      onClick={onClickButton}
     >
       {props.valueButton}
     </button>

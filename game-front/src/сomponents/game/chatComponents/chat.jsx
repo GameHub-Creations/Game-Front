@@ -1,20 +1,22 @@
 import Dialogs from "./dialogs";
 import React from "react";
+import { addMessageActionCreator, changeMessageActionCreator } from "../../../state";
 
 function Chat(props) {
-  let ref = React.createRef();
+  let createRef = React.createRef();
 
   function addMessage(event) {
-    // Добавляет сообщение по нажатию 'Enter' в поле ввода
+    // Добавляет сообщение в диалог чата
     if (event.key === "Enter") {
-      props.dispatch({ type: "Add-Message" });
+      props.dispatch(addMessageActionCreator());
     }
   }
 
   function changeMessage() {
-    // Обновляет текст в поле ввода
-    let newText = ref.current.value;
-    props.dispatch({ type: "Change-Message", newText: newText });
+    // Записывает текст введенный в поле ввода
+    let newText = createRef.current.value;
+    let action = changeMessageActionCreator(newText)
+    props.dispatch(action);
   }
 
   return (
@@ -32,7 +34,7 @@ function Chat(props) {
         <textarea
           className={props.classChatInput}
           placeholder="Обсудить со всеми"
-          ref={ref}
+          ref={createRef}
           onKeyDown={addMessage}
           value={props.inputMessageData}
           onChange={changeMessage}
