@@ -1,3 +1,5 @@
+import { gameReducer } from "./gameReducer";
+
 const addMessage = "Add-Message";
 const changeMessage = "Change-Message";
 
@@ -70,25 +72,9 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === "Click-Button") 
-      {alert("click on button");} 
-    else if (action.type === "Click-Card")  
-      {alert("click on card");} 
-    
-    else if (action.type === addMessage) {
-      // Добавляет сообщение в диалог чата
-      this._state.gamePage.chat.dialogsData.push({
-        name: "newUser",
-        message: this._state.gamePage.chat.inputMessageData,
-      });
-      this._state.gamePage.chat.inputMessageData = "";
-      this._callSubscriber(this._state);
-    } 
-    else if (action.type === changeMessage) {
-      // Записывает текст введенный в поле ввода
-      this._state.gamePage.chat.inputMessageData = action.newText;
-      this._callSubscriber(this._state);
-    }
+    // общий метод действий
+    this._state.gamePage = gameReducer(this._state.gamePage, action)
+    this._callSubscriber(this._state)
   },
 };
 

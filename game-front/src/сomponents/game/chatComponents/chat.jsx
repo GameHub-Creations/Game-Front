@@ -1,6 +1,7 @@
+import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/state";
+
 import Dialogs from "./dialogs";
 import React from "react";
-import { addMessageActionCreator, changeMessageActionCreator } from "../../../state";
 
 function Chat(props) {
   let createRef = React.createRef();
