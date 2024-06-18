@@ -1,8 +1,5 @@
 import { gameReducer } from "./gameReducer";
 
-const addMessage = "Add-Message";
-const changeMessage = "Change-Message";
-
 let store = {
   _state: {
     gamePage: {
@@ -79,16 +76,5 @@ let store = {
 };
 
 
-export function addMessageActionCreator() {
-  return {
-    type: addMessage,
-  };
-}
-
-export function changeMessageActionCreator(newText) {
-  return {
-    type: changeMessage, newText: newText
-  };
-}
 export default store;
 window.store = store;

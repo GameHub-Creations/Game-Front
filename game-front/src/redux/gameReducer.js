@@ -20,3 +20,15 @@ export function gameReducer(state, action) {
   }
   return state;
 }
+
+export function addMessageActionCreator() {
+   return {
+     type: addMessage,
+   };
+ }
+ 
+ export function changeMessageActionCreator(newText) {
+   return {
+     type: changeMessage, newText: newText
+   };
+ }

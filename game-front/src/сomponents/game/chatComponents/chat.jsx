@@ -1,4 +1,4 @@
-import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/state";
+import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/gameReducer";
 
 import Dialogs from "./dialogs";
 import React from "react";
