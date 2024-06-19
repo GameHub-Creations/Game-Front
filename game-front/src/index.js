@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import store from "./redux/state";
+import store from "./redux/reduxStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,4 +20,9 @@ let _callSubscriber = (state) => {
 
 _callSubscriber(store.getState());
 
-store.subscribe(_callSubscriber);
+// store.subscribe(_callSubscriber);
+
+store.subscribe(() => {
+  let state = store.getState();
+  _callSubscriber(state);
+});

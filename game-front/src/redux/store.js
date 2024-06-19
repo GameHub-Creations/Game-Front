@@ -70,8 +70,8 @@ let store = {
 
   dispatch(action) {
     // общий метод действий
-    this._state.gamePage = gameReducer(this._state.gamePage, action)
-    this._callSubscriber(this._state)
+    this._state.gamePage = gameReducer(this._state.gamePage, action);
+    this._callSubscriber(this._state);
   },
 };
 
