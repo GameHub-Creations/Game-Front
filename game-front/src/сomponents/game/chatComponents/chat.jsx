@@ -1,8 +1,15 @@
 // import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/gameReducer";
 
+import {
+  faCircle,
+  faCircleXmark,
+  faComments,
+} from "@fortawesome/free-solid-svg-icons";
+
 import Dialogs from "./dialogs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Title from "./title";
 
 function Chat(props) {
   let createRef = React.createRef();
@@ -28,12 +35,7 @@ function Chat(props) {
 
   return (
     <div className={props.classChat}>
-      <div className={props.classChatTitle}>
-        <i className="fas fa-sharp fa-regular fa-comments chatTitleIconMessage"></i>
-        <span className="chatTitleContent">Общие сообщения</span>
-        <i className="fas fa-regular fa-circle chatTitleIconCircleMinus"></i>
-        <i className="fas fa-regular fa-circle chatTitleIconCircleCross"></i>
-      </div>
+      <Title classChatTitle={props.classChatTitle} />
       <Dialogs
         classChatDialogs={props.classChatDialogs}
         classChatNamePlayer={props.classChatNamePlayer}

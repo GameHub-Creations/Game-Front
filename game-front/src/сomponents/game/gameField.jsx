@@ -7,6 +7,7 @@ import "./../../styles/game/userRank.css";
 import "./../../styles/game/chatComponents/message.css";
 import "./../../styles/game/chatComponents/chat.css";
 import "./../../styles/game/chatComponents/dialogs.css";
+import "./../../styles/game/chatComponents/title.css";
 
 import Action from "./action";
 import Button from "./button";

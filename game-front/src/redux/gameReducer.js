@@ -1,7 +1,6 @@
-import { useWebSocket } from 'react-use-websocket';
+import { useWebSocket } from "react-use-websocket";
 
-const userID = Date.now()
-
+const userID = Date.now();
 
 let initialState = {
   closedDeckData: {
@@ -71,14 +70,15 @@ export function gameReducer(state = initialState, action) {
       message: state.chat.inputMessageData,
     });
     state.chat.inputMessageData = "";
-  }
-  if (action.type === "Change-Message") {
+  } else if (action.type === "Change-Message") {
     // Записывает текст введенный в поле ввода
     state.chat.inputMessageData = action.newText;
+  } else if (action.type === "Click-Collapse-Chat") {
+    // Записывает текст введенный в поле ввода
+    alert("Click Collapse Chat");
   }
   return state;
 }
-
 // export function addMessageActionCreator() {
 //   return {
 //     type: "Add-Message",
