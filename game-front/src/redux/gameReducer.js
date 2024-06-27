@@ -1,5 +1,7 @@
-const addMessage = "Add-Message";
-const changeMessage = "Change-Message";
+import { useWebSocket } from 'react-use-websocket';
+
+const userID = Date.now()
+
 
 let initialState = {
   closedDeckData: {
@@ -62,30 +64,30 @@ export function gameReducer(state = initialState, action) {
     alert("click on button");
   } else if (action.type === "Click-Card") {
     alert("click on card");
-  } else if (action.type === addMessage) {
+  } else if (action.type === "Add-Message") {
     // Добавляет сообщение в диалог чата
     state.chat.dialogsData.push({
-      name: "newUser",
+      name: userID,
       message: state.chat.inputMessageData,
     });
     state.chat.inputMessageData = "";
   }
-  if (action.type === changeMessage) {
+  if (action.type === "Change-Message") {
     // Записывает текст введенный в поле ввода
     state.chat.inputMessageData = action.newText;
   }
   return state;
 }
 
-export function addMessageActionCreator() {
-  return {
-    type: addMessage,
-  };
-}
+// export function addMessageActionCreator() {
+//   return {
+//     type: "Add-Message",
+//   };
+// }
 
-export function changeMessageActionCreator(newText) {
-  return {
-    type: changeMessage,
-    newText: newText,
-  };
-}
+// export function changeMessageActionCreator(newText) {
+//   return {
+//     type: "Change-Message",
+//     newText: newText,
+//   };
+// }

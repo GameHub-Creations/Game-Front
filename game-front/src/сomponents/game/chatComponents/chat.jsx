@@ -1,6 +1,7 @@
-import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/gameReducer";
+// import { addMessageActionCreator, changeMessageActionCreator } from "./../../../redux/gameReducer";
 
 import Dialogs from "./dialogs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 function Chat(props) {
@@ -9,21 +10,29 @@ function Chat(props) {
   function addMessage(event) {
     // Добавляет сообщение в диалог чата
     if (event.key === "Enter") {
-      props.dispatch(addMessageActionCreator());
+      props.dispatch({
+        type: "Add-Message",
+      });
     }
   }
 
   function changeMessage() {
     // Записывает текст введенный в поле ввода
     let newText = createRef.current.value;
-    let action = changeMessageActionCreator(newText)
+    let action = {
+      type: "Change-Message",
+      newText: newText,
+    };
     props.dispatch(action);
   }
 
   return (
     <div className={props.classChat}>
       <div className={props.classChatTitle}>
-        <span>Общие сообщения</span>
+        <i className="fas fa-sharp fa-regular fa-comments chatTitleIconMessage"></i>
+        <span className="chatTitleContent">Общие сообщения</span>
+        <i className="fas fa-regular fa-circle chatTitleIconCircleMinus"></i>
+        <i className="fas fa-regular fa-circle chatTitleIconCircleCross"></i>
       </div>
       <Dialogs
         classChatDialogs={props.classChatDialogs}

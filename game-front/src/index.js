@@ -20,9 +20,6 @@ let _callSubscriber = (state) => {
 
 _callSubscriber(store.getState());
 
-// store.subscribe(_callSubscriber);
-
 store.subscribe(() => {
-  let state = store.getState();
-  _callSubscriber(state);
+  _callSubscriber(store.getState());
 });

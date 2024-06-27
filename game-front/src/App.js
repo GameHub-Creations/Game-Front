@@ -10,7 +10,6 @@ import Header from "./сomponents/game/header";
 import Main from "./сomponents/main/main";
 
 function App(props) {
-  debugger
   return (
     <div>
       <Header
