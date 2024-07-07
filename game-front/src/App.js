@@ -15,7 +15,6 @@ function App(props) {
       <Header
         classHeaderMenu="headerMenu"
         classMenuItem="menuItem"
-        classActive="active"
       />
       <Routes>
         <Route
@@ -29,6 +28,7 @@ function App(props) {
               handDeck1Data={props.state.gamePage.handDeck1Data}
               valueActionData={props.state.gamePage.valueActionData}
               valueButtonData={props.state.gamePage.valueButtonData}
+              dialogsStatus={props.state.gamePage.chat.dialogsStatus}
               dialogsData={props.state.gamePage.chat.dialogsData}
               inputMessageData={props.state.gamePage.chat.inputMessageData}
               dispatch={props.dispatch}

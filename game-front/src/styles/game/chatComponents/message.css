@@ -1,12 +1,12 @@
 /* --------------- Стили сообщений чата --------------- */
 
-.chatNamePlayer {
+.namePlayer {
   /* цвет текста */
   color: #7a8633;
 }
 
 
-.chatMessage {
+.message {
   /* цвет текста */
   color: #8d6147;
 }

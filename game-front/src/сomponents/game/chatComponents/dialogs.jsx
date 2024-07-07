@@ -1,16 +1,13 @@
+import "./../../../styles/game/chatComponents/dialogs.css";
+
 import Message from "./message";
 import React from "react";
 
 function Dialogs(props) {
   return (
-    <div className={props.classChatDialogs}>
+    <div className="dialogs">
       {props.dialogsData.map((el) => (
-        <Message
-          classChatNamePlayer={props.classChatNamePlayer}
-          valueChatNamePlayer={el.name}
-          classChatMessage={props.classChatMessage}
-          valueChatMessage={el.message}
-        />
+        <Message key={el.name}  valueNamePlayer={el.name} valueMessage={el.message} />
       ))}
     </div>
   );

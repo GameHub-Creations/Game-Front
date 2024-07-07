@@ -11,8 +11,8 @@ function Card(props) {
   return (
     <div
       className={props.classCard}
-      cardSuit={props.cardSuit}
-      cardNominal={props.cardNominal}
+      card-suit={props.cardSuit}
+      car-nominal={props.cardNominal}
       onClick={onClickCard}
     ></div>
   );

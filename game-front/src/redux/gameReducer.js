@@ -8,21 +8,21 @@ let initialState = {
     deckId: "00000011",
     name: "Закрытая колода",
     countCards: 31,
-    cards: { suit: "♠", nominal: "10" },
+    cards: { suit: "peak", nominal: "10" },
   },
   openDeckData: {
     userId: null,
     deckId: "00000012",
     name: "Открытая колода",
     countCards: 1,
-    cards: { suit: "♠", nominal: "A" },
+    cards: { suit: "peak", nominal: "A" },
   },
   firsTemporaryDeckData: {
     userId: null,
     deckId: "00000013",
     name: "Временная колода",
     countCards: 1,
-    cards: { suit: "♠", nominal: "A" },
+    cards: { suit: "peak", nominal: "A" },
   },
   handDeck0Data: {
     userId: "10000000",
@@ -30,7 +30,7 @@ let initialState = {
     name: "Гость 77777777",
     userRank: "666",
     countCards: 2,
-    cards: { suit: "♠", nominal: "A" },
+    cards: { suit: "peak", nominal: "A" },
   },
   handDeck1Data: {
     userId: "20000000",
@@ -38,11 +38,12 @@ let initialState = {
     name: "Гость 88888888",
     userRank: "999",
     countCards: 2,
-    cards: { suit: "♠", nominal: "A" },
+    cards: { suit: "peak", nominal: "A" },
   },
   valueActionData: "Ваш ход",
   valueButtonData: "Взять карты",
   chat: {
+    dialogsStatus: "block",
     dialogsData: [
       {
         name: "Гость 88888888",
@@ -59,23 +60,28 @@ let initialState = {
 
 export function gameReducer(state = initialState, action) {
   // Преобразователь state
+
+  // Клик по кнопке 'Взять карты'
   if (action.type === "Click-Button") {
     alert("click on button");
+    // Клик по карте
   } else if (action.type === "Click-Card") {
     alert("click on card");
+
+    // Добавить сообщение в диалог чата
   } else if (action.type === "Add-Message") {
-    // Добавляет сообщение в диалог чата
     state.chat.dialogsData.push({
       name: userID,
       message: state.chat.inputMessageData,
     });
     state.chat.inputMessageData = "";
+    // Добавляет введённый символ в поле ввода
   } else if (action.type === "Change-Message") {
-    // Записывает текст введенный в поле ввода
     state.chat.inputMessageData = action.newText;
-  } else if (action.type === "Click-Collapse-Chat") {
-    // Записывает текст введенный в поле ввода
-    alert("Click Collapse Chat");
+  } else if (action.type === "Click-Turn-Chat") {
+    // Сворачивает чат
+    state.chat.dialogsStatus = "none";
+    // alert(state.chat.dialogsStatus);
   }
   return state;
 }

@@ -6,8 +6,6 @@ import "./../../styles/game/userDeck.css";
 import "./../../styles/game/userRank.css";
 import "./../../styles/game/chatComponents/message.css";
 import "./../../styles/game/chatComponents/chat.css";
-import "./../../styles/game/chatComponents/dialogs.css";
-import "./../../styles/game/chatComponents/title.css";
 
 import Action from "./action";
 import Button from "./button";
@@ -114,13 +112,8 @@ function GameField(props) {
         dispatch={props.dispatch}
       />
       <Chat
-        classChat="chat"
-        classChatTitle="chatTitle"
-        classChatDialogs="chatDialogs"
-        classChatNamePlayer="chatNamePlayer"
-        classChatMessage="chatMessage"
+        dialogsStatus={props.dialogsStatus}
         dialogsData={props.dialogsData}
-        classChatInput="chatInput"
         inputMessageData={props.inputMessageData}
         dispatch={props.dispatch}
       />

@@ -5,8 +5,8 @@ function UserData(props) {
   return (
     <div
       className={props.classUserName}
-      deckId={props.deckId}
-      userId={props.userId}
+      deck-id={props.deckId}
+      user-id={props.userId}
     >
       {props.valueUserName}
       <UserRank
