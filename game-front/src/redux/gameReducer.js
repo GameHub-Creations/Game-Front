@@ -1,5 +1,3 @@
-import { useWebSocket } from "react-use-websocket";
-
 const userID = Date.now();
 
 let initialState = {
@@ -43,7 +41,8 @@ let initialState = {
   valueActionData: "Ваш ход",
   valueButtonData: "Взять карты",
   chat: {
-    dialogsStatus: "block",
+    headerStatus: "block",
+    headerCollapsedStatus: "none",
     dialogsData: [
       {
         name: "Гость 88888888",
@@ -68,32 +67,34 @@ export function gameReducer(state = initialState, action) {
   } else if (action.type === "Click-Card") {
     alert("click on card");
 
-    // Добавить сообщение в диалог чата
+    // Добавляет сообщение в диалог чата
   } else if (action.type === "Add-Message") {
     state.chat.dialogsData.push({
       name: userID,
       message: state.chat.inputMessageData,
     });
     state.chat.inputMessageData = "";
+
     // Добавляет введённый символ в поле ввода
   } else if (action.type === "Change-Message") {
     state.chat.inputMessageData = action.newText;
   } else if (action.type === "Click-Turn-Chat") {
     // Сворачивает чат
-    state.chat.dialogsStatus = "none";
+    state.chat.headerStatus = "none";
+    // Отображает шапку чата
+    state.chat.headerCollapsedStatus = "block";
     // alert(state.chat.dialogsStatus);
+  } else if (action.type === "Click-Open-Chat") {
+    // Открывает чат
+    state.chat.headerStatus = "block";
+    // Сворачивает шапку чата
+    state.chat.headerCollapsedStatus = "none";
+  } else if (action.type === "Click-Close-Chat") {
+    // Закрывает чат
+    state.chat.headerStatus = "none";
+    // Закрывает шапку чата
+    state.chat.headerCollapsedStatus = "none";
   }
+
   return state;
 }
-// export function addMessageActionCreator() {
-//   return {
-//     type: "Add-Message",
-//   };
-// }
-
-// export function changeMessageActionCreator(newText) {
-//   return {
-//     type: "Change-Message",
-//     newText: newText,
-//   };
-// }

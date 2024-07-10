@@ -112,7 +112,8 @@ function GameField(props) {
         dispatch={props.dispatch}
       />
       <Chat
-        dialogsStatus={props.dialogsStatus}
+        headerStatus={props.headerStatus}
+        headerCollapsedStatus={props.headerCollapsedStatus}
         dialogsData={props.dialogsData}
         inputMessageData={props.inputMessageData}
         dispatch={props.dispatch}

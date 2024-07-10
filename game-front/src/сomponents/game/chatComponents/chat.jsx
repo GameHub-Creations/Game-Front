@@ -1,21 +1,27 @@
-import ChatDialogs from "./chatDialogs";
-import ChatTitle from "./chaTitle";
+import Dialogs from "./dialogs";
+import Header from "./header";
+import HeaderCollapsed from "./headerCollapsed";
+import InputMessages from "./inputMessages";
 import React from "react";
 
 function Chat(props) {
   return (
     <>
       {/* Блок чата */}
-      <div className="chat" style={{ display: props.dialogsStatus }}>
+      <div className="chat" style={{ display: props.headerStatus }}>
         {/* Блок заголовка чата */}
-        <ChatTitle style={{ display: "block" }} dispatch={props.dispatch} />
-        <ChatDialogs
-          dialogsStatus={props.dialogsStatus}
+        <Header style={{ display: props.dialogsStatus }} dispatch={props.dispatch} />
+        <Dialogs
           dialogsData={props.dialogsData}
           inputMessageData={props.inputMessageData}
           dispatch={props.dispatch}
         />
+        <InputMessages
+          inputMessageData={props.inputMessageData}
+          dispatch={props.dispatch}
+        />
       </div>
+      <HeaderCollapsed headerCollapsedStatus={props.headerCollapsedStatus} dispatch={props.dispatch} />
     </>
   );
 }

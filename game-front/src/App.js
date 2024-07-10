@@ -28,7 +28,8 @@ function App(props) {
               handDeck1Data={props.state.gamePage.handDeck1Data}
               valueActionData={props.state.gamePage.valueActionData}
               valueButtonData={props.state.gamePage.valueButtonData}
-              dialogsStatus={props.state.gamePage.chat.dialogsStatus}
+              headerStatus={props.state.gamePage.chat.headerStatus}
+              headerCollapsedStatus={props.state.gamePage.chat.headerCollapsedStatus}
               dialogsData={props.state.gamePage.chat.dialogsData}
               inputMessageData={props.state.gamePage.chat.inputMessageData}
               dispatch={props.dispatch}
