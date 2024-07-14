@@ -16,14 +16,14 @@
   /* высота элемента */
   height: 320px;
   /* цвет фона элемента */
-  background: #c5c39f;
+  background: #dbd3b3;
   /* рамка элемента */
   border: 1px solid #696969;
   /* закругление углов элемента */
   border-radius: 5px 5px 0 0;
 
   /* размера шрифта текста */
-  font-size: 75%;
+  font-size: 8pt;
   /* шрифт текста */
   font-style: italic;
 }

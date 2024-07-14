@@ -52,12 +52,12 @@ let initialState = {
       {
         valueNamePlayer: "Гость 88888888",
         valueMessage: "Я тебя разматаю",
-        valueMessageTime: "",
+        valueMessageTime: "12:26",
       },
       {
         valueNamePlayer: "Гость 77777777",
         valueMessage: "Иди говна поешь",
-        valueMessageTime: "",
+        valueMessageTime: "12:26",
       },
     ],
     inputMessageData: "",
