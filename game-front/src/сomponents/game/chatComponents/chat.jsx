@@ -10,10 +10,12 @@ function Chat(props) {
       {/* Блок чата */}
       <div className="chat" style={{ display: props.headerStatus }}>
         {/* Блок заголовка чата */}
-        <Header style={{ display: props.dialogsStatus }} dispatch={props.dispatch} />
+        <Header
+          style={{ display: props.dialogsStatus }}
+          dispatch={props.dispatch}
+        />
         <Dialogs
           dialogsData={props.dialogsData}
-          inputMessageData={props.inputMessageData}
           dispatch={props.dispatch}
         />
         <InputMessages
@@ -21,7 +23,10 @@ function Chat(props) {
           dispatch={props.dispatch}
         />
       </div>
-      <HeaderCollapsed headerCollapsedStatus={props.headerCollapsedStatus} dispatch={props.dispatch} />
+      <HeaderCollapsed
+        headerCollapsedStatus={props.headerCollapsedStatus}
+        dispatch={props.dispatch}
+      />
     </>
   );
 }

@@ -5,12 +5,13 @@ import React from "react";
 
 function Dialogs(props) {
   return (
-    <div className="chatDialogs">
+    <div className="dialogs">
       {props.dialogsData.map((el) => (
         <Message
-          key={el.name}
-          valueNamePlayer={el.name}
-          valueMessage={el.message}
+          key={el.valueNamePlayer}
+          valueNamePlayer={el.valueNamePlayer}
+          valueMessage={el.valueMessage}
+          valueMessageTime={el.valueMessageTime}
         />
       ))}
     </div>

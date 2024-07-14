@@ -1,7 +1,7 @@
 /* Стили заголовка чата */
 .header {
   /* относительное позиционирование элемента */
-  position: absolute;
+  position: relative;
   /* цвет фона */
   background-color: #212121;
   /* высота элемента */
@@ -12,56 +12,49 @@
   border-radius: 5px 5px 0 0;
 }
 
-/* Стили иконки 'Сообщения' */
-.headerIconMessage {
+.headerIcons {
   /* относительное позиционирование элемента */
-  position: absolute;
-  /* отступ сверху */
-  top: 8px;
-  /* отступ слева */
-  left: 8px;
+  position: relative;
   /* размер элемента */
   font-size: 14px;
+  /* отступ сверху */
+  top: 5px;
+}
+
+/* Стили иконки 'Сообщения' */
+.headerIconMessage {
+  /* отступ слева */
+  left: 7px;
 }
 
 /* Стили контента заголовка чата */
 .headerContent {
   /* относительное позиционирование элемента */
-  position: absolute;
+  position: relative;
+  /* отступ сверху */
+  top: 3px;
+  /* отступ слева */
+  left: 20px;
   /* цвет текста */
   color: #fff;
   /* жирность текста */
   font-weight: 550;
-  /* выравнивание текста по центру */
+  /* выравнивание текста по левой стороне */
   text-align: left;
-  top: 3px;
-  left: 30px;
 }
 
 /* Стили иконки 'Свернуть' */
 .headerIconCollapse {
-  /* относительное позиционирование элемента */
-  position: absolute;
-  /* отступ сверху */
-  top: 8px;
-  /* отступ справа */
-  right: 28px;
-  /* размер элемента */
-  font-size: 14px;
+  /* отступ слева */
+  left: 45px;
   /* цвет текста */
   color: #acacac;
 }
 
 /* Стили иконки 'Удалить' */
 .headerIconClose {
-  /* относительное позиционирование элемента */
-  position: absolute;
-  /* отступ сверху */
-  top: 8px;
-  /* отступ справа */
-  right: 8px;
-  /* размер элемента */
-  font-size: 14px;
+  /* отступ слева */
+  left: 50px;
   /* цвет текста */
   color: #acacac;
 }

@@ -1,4 +1,9 @@
-const userID = Date.now();
+ 
+function getTime(){
+  let hours= new Date().getHours();
+  let minutes= new Date().getMinutes();
+  return`${hours}:${minutes}`
+}
 
 let initialState = {
   closedDeckData: {
@@ -45,12 +50,14 @@ let initialState = {
     headerCollapsedStatus: "none",
     dialogsData: [
       {
-        name: "Гость 88888888",
-        message: "Я тебя разматаю",
+        valueNamePlayer: "Гость 88888888",
+        valueMessage: "Я тебя разматаю",
+        valueMessageTime: "",
       },
       {
-        name: "Гость 77777777",
-        message: "Иди говна поешь",
+        valueNamePlayer: "Гость 77777777",
+        valueMessage: "Иди говна поешь",
+        valueMessageTime: "",
       },
     ],
     inputMessageData: "",
@@ -70,8 +77,10 @@ export function gameReducer(state = initialState, action) {
     // Добавляет сообщение в диалог чата
   } else if (action.type === "Add-Message") {
     state.chat.dialogsData.push({
-      name: userID,
-      message: state.chat.inputMessageData,
+
+      valueNamePlayer: Date.now(),
+      valueMessage: state.chat.inputMessageData,
+      valueMessageTime: getTime(),
     });
     state.chat.inputMessageData = "";
 

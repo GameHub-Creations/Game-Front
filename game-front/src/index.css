@@ -1,14 +1,15 @@
-/* Задний фон html */
-html,
-body {
-  /* внешний отступ */
+* {
   margin: 0;
-  /* внутренний отступ */
   padding: 0;
-  /* цвет заднего фона */
-  background-color: gray;
-  /* высота элемента */
-  height: 100%;
 }
 
- 
+/* цвет заднего фона */
+html, body {
+  background-color: gray;
+  height:100%;
+}
+
+#root {
+  position: relative;
+  height:100%;
+}

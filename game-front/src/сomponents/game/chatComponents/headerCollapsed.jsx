@@ -19,13 +19,13 @@ function HeaderCollapsed(props) {
       className="headerCollapsed"
       style={{ display: props.headerCollapsedStatus }}
     >
-      <LuMessageSquare className="headerCollapsedIconMessage" />
+      <LuMessageSquare className="headerCollapsedIcons headerCollapsedIconMessage" />
       <span className="headerCollapsedContent">Общие сообщения</span>
       <CiCircleChevUp
-        className="headerCollapsedIconOpen"
+        className="headerCollapsedIcons headerCollapsedIconOpen"
         onClick={openChat}
       />
-      <CiCircleRemove className="headerIconClose" onClick={closeChat} />
+      <CiCircleRemove className="headerCollapsedIcons headerCollapsedIconClose" onClick={closeChat} />
     </div>
   );
 }

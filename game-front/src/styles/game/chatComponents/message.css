@@ -5,8 +5,18 @@
   color: #7a8633;
 }
 
-
 .message {
   /* цвет текста */
   color: #8d6147;
+}
+
+.messagesTime {
+ 
+  /* color: #777;
+  font-size: 70%; */
+  bottom: 4px;
+  color: #777;
+  font-size: 70%;
+  position: absolute;
+  right: 5px;
 }

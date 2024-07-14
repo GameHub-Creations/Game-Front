@@ -16,10 +16,10 @@ function Header(props) {
   }
   return (
     <div className="header">
-      <LuMessageSquare className="headerIconMessage" />
+      <LuMessageSquare className="headerIcons headerIconMessage" />
       <span className="headerContent">Общие сообщения</span>
-      <CiCircleChevDown className="headerIconCollapse" onClick={turnChat} />
-      <CiCircleRemove className="headerIconClose" onClick={closeChat} />
+      <CiCircleChevDown className="headerIcons headerIconCollapse" onClick={turnChat} />
+      <CiCircleRemove className="headerIcons headerIconClose" onClick={closeChat} />
     </div>
   );
 }
