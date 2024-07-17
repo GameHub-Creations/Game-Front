@@ -1,8 +1,12 @@
- 
-function getTime(){
-  let hours= new Date().getHours();
-  let minutes= new Date().getMinutes();
-  return`${hours}:${minutes}`
+function addZeroesToDate(time) {
+  if (time.getMonth < 10) return "0" + time;
+  return time;
+}
+
+function getTime() {
+  let hours = addZeroesToDate(new Date().getHours());
+  let minutes = addZeroesToDate(new Date().getMinutes());
+  return `${hours}:${minutes}`;
 }
 
 let initialState = {
@@ -48,7 +52,9 @@ let initialState = {
   chat: {
     headerStatus: "block",
     headerCollapsedStatus: "none",
+    placeholder: "Обсудить со всеми",
     dialogsData: [
+     
       {
         valueNamePlayer: "Гость 88888888",
         valueMessage: "Я тебя разматаю",
@@ -77,7 +83,6 @@ export function gameReducer(state = initialState, action) {
     // Добавляет сообщение в диалог чата
   } else if (action.type === "Add-Message") {
     state.chat.dialogsData.push({
-
       valueNamePlayer: Date.now(),
       valueMessage: state.chat.inputMessageData,
       valueMessageTime: getTime(),
@@ -103,6 +108,13 @@ export function gameReducer(state = initialState, action) {
     state.chat.headerStatus = "none";
     // Закрывает шапку чата
     state.chat.headerCollapsedStatus = "none";
+  } else if (action.type === "Remove-Cursor") {
+    // document.addEventListener("click", (e) => {
+      // if (!action.click) {
+      //   action.element.style.display = "none"; // скрываем элемент т к клик был за его пределами
+      // }
+      debugger
+      state.chat.placeholder = "Обсудить со всеми";
   }
 
   return state;

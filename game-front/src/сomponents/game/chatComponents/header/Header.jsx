@@ -1,4 +1,4 @@
-import "./../../../styles/game/chatComponents/header.css";
+import "./Header.css";
 
 import { CiCircleChevDown, CiCircleRemove } from "react-icons/ci";
 

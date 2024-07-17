@@ -20,10 +20,10 @@
 
 /* Стили ссылки на картинку карт */
 .pictureCard .card {
-  background: url("./../../imgs/card.jpg");
+  background: url("./../../../imgs/card.jpg");
 }
 
 /* Стили ссылки на рубашку карт */
 .shirtCard .card.back {
-  background: url("./../../imgs/shirt.jpg");
+  background: url("./../../../imgs/shirt.jpg");
 }

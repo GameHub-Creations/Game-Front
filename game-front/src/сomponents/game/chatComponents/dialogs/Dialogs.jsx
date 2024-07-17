@@ -1,6 +1,6 @@
-import "./../../../styles/game/chatComponents/dialogs.css";
+import "./Dialogs.css";
 
-import Message from "./message";
+import Message from "../message/Message";
 import React from "react";
 
 function Dialogs(props) {

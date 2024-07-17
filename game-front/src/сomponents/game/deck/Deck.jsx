@@ -1,3 +1,5 @@
+import "./Deck.css";
+
 import React from "react";
 
 function Deck(props) {

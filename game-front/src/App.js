@@ -1,12 +1,10 @@
 import "./App.css";
-import "./styles/game/gameField.css";
-import "./styles/game/header.css";
 
 import { Route, Routes } from "react-router-dom";
 
 import Avatar from "./сomponents/avatar/avatar";
-import GameField from "./сomponents/game/gameField";
-import Header from "./сomponents/game/header";
+import GameField from "./сomponents/game/gameField/GameField";
+import Header from "./сomponents/game/header/Header";
 import Main from "./сomponents/main/main";
 
 function App(props) {
@@ -31,6 +29,7 @@ function App(props) {
               headerStatus={props.state.gamePage.chat.headerStatus}
               headerCollapsedStatus={props.state.gamePage.chat.headerCollapsedStatus}
               dialogsData={props.state.gamePage.chat.dialogsData}
+              placeholderData={props.state.gamePage.chat.placeholder}
               inputMessageData={props.state.gamePage.chat.inputMessageData}
               dispatch={props.dispatch}
             />

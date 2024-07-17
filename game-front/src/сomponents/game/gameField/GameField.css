@@ -6,7 +6,7 @@
   /* относительное позиционирование элемента */
   position: absolute;
   /* ссылка на картинку игрового поля */
-  background-image: url("./../../imgs/imgField.jpg");
+  background-image: url("./../../../imgs/imgField.jpg");
   /* фоновое изображение не повторяется */
   background-repeat: no-repeat; 
   height: 95%;

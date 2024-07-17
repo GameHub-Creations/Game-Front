@@ -1,5 +1,7 @@
+import "./UserDeck.css";
+
 import React from "react";
-import UserData from "./userData";
+import UserData from "../userData/UserData";
 
 function UserDeck(props) {
   return (

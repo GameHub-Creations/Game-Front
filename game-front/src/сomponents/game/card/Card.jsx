@@ -1,4 +1,4 @@
-import "./../../styles/game/card.css";
+import "./Card.css";
 
 import React from "react";
 
@@ -10,7 +10,7 @@ function Card(props) {
   
   return (
     <div
-      className={props.classCard}
+      className="card"
       card-suit={props.cardSuit}
       car-nominal={props.cardNominal}
       onClick={onClickCard}

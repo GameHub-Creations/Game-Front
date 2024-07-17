@@ -1,3 +1,5 @@
+import "./UserRank.css";
+
 import React from "react";
 
 function UserRank(props) {

@@ -1,4 +1,4 @@
-import "./../../../styles/game/chatComponents/headerCollapsed.css";
+import "./HeaderCollapsed.css";
 
 import { CiCircleChevUp, CiCircleRemove } from "react-icons/ci";
 

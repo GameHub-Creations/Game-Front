@@ -1,19 +1,12 @@
-import "./../../styles/game/action.css";
-import "./../../styles/game/button.css";
-import "./../../styles/game/deck.css";
-import "./../../styles/game/userData.css";
-import "./../../styles/game/userDeck.css";
-import "./../../styles/game/userRank.css";
-import "./../../styles/game/chatComponents/message.css";
-import "./../../styles/game/chatComponents/chat.css";
+import "./GameField.css";
 
-import Action from "./action";
-import Button from "./button";
-import Card from "./card";
-import Chat from "./chatComponents/chat";
-import Deck from "./Deck";
+import Action from "../action/Action";
+import ButtonTakeCards from "../buttonTakeCards/ButtonTakeCards";
+import Card from "../card/Card";
+import Chat from "../chatComponents/Chat";
+import Deck from "../deck/Deck";
 import React from "react";
-import UserDeck from "./userDeck";
+import UserDeck from "../userDeck/UserDeck";
 
 function GameField(props) {
   return (
@@ -106,7 +99,7 @@ function GameField(props) {
         />
       </div>
       <Action classAction="action" valueAction={props.valueActionData} />
-      <Button
+      <ButtonTakeCards
         classButton="userButton"
         valueButton={props.valueButtonData}
         dispatch={props.dispatch}
@@ -114,6 +107,7 @@ function GameField(props) {
       <Chat
         headerStatus={props.headerStatus}
         headerCollapsedStatus={props.headerCollapsedStatus}
+        placeholderData={props.placeholderData}
         dialogsData={props.dialogsData}
         inputMessageData={props.inputMessageData}
         dispatch={props.dispatch}

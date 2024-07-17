@@ -1,4 +1,4 @@
-import "./../../../styles/game/chatComponents/message.css";
+import "./Message.css";
 
 import React from "react";
 

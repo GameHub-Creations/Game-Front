@@ -1,4 +1,4 @@
-import "./../../../styles/game/chatComponents/inputMessages.css";
+import "./InputMessages.css";
 
 import React from "react";
 
@@ -29,7 +29,7 @@ function InputMessages(props) {
     <div className="chatMessages">
       <textarea
         className="chatInput"
-        placeholder="Обсудить со всеми"
+        placeholder={props.placeholderData}
         ref={createRef}
         onKeyDown={addMessage}
         value={props.inputMessageData}

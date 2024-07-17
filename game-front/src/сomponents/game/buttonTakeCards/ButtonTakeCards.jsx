@@ -1,6 +1,8 @@
+import "./ButtonTakeCards.css";
+
 import React from "react";
 
-function Button(props) {
+function ButtonTakeCards(props) {
 
   function onClickButton() {
     return props.dispatch({ type: "Click-Button" })
@@ -17,4 +19,4 @@ function Button(props) {
   );
 }
 
-export default Button;
+export default ButtonTakeCards;

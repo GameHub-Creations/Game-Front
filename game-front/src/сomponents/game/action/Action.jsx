@@ -1,3 +1,5 @@
+import "./Action.css";
+
 import React from "react";
 
 function Action(props) {
