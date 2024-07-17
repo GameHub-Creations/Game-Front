@@ -3,7 +3,7 @@ import "./UserRank.css";
 import React from "react";
 
 function UserRank(props) {
-  return <span className={props.classUserRank}>{props.valueUserRank}</span>;
+  return <span className="userRank">{props.valueUserRank}</span>;
 }
 
 export default UserRank;

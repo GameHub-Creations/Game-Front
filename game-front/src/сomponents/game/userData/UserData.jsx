@@ -6,13 +6,12 @@ import UserRank from "../userRank/UserRank";
 function UserData(props) {
   return (
     <div
-      className="userNames"
+      className={props.classUserName}
       deck-id={props.deckId}
       user-id={props.userId}
     >
       {props.valueUserName}
       <UserRank
-        classUserRank={props.classUserRank}
         valueUserRank={props.valueUserRank}
       />
     </div>

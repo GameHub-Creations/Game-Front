@@ -1,4 +1,6 @@
 import "./GameField.css";
+import "./../deck/Deck.css";
+import "./../card/Card.css";
 
 import Action from "../action/Action";
 import ButtonTakeCards from "../buttonTakeCards/ButtonTakeCards";
@@ -20,7 +22,7 @@ function GameField(props) {
           classCards="decks closedDeckCards"
           cards={
             <Card
-              classCard="card"
+              classCard="card back"
               cardSuit={props.closedDeckData.cards.suit}
               cardNominal={props.closedDeckData.cards.nominal}
               dispatch={props.dispatch}
@@ -64,7 +66,6 @@ function GameField(props) {
           userId={props.handDeck0Data.userId}
           deckId={props.handDeck0Data.deckId}
           valueUserName={props.handDeck0Data.name}
-          classUserRank="userRank"
           valueUserRank={props.handDeck0Data.userRank}
           classCount="hand handCount0"
           valueCount={props.handDeck0Data.countCards}
@@ -83,14 +84,13 @@ function GameField(props) {
           userId={props.handDeck1Data.userId}
           deckId={props.handDeck1Data.deckId}
           valueUserName={props.handDeck1Data.name}
-          classUserRank="userRank"
           valueUserRank={props.handDeck1Data.userRank}
           classCount="hand handCount1"
           valueCount={props.handDeck1Data.countCards}
           classCards="hand handCards1"
           cards={
             <Card
-              classCard="card"
+              classCard="card back"
               cardSuit={props.handDeck1Data.cards.suit}
               cardNominal={props.handDeck1Data.cards.nominal}
               dispatch={props.dispatch}

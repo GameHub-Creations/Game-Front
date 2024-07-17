@@ -1,5 +1,3 @@
-import "./Card.css";
-
 import React from "react";
 
 function Card(props) {
@@ -10,7 +8,7 @@ function Card(props) {
   
   return (
     <div
-      className="card"
+      className={props.classCard}
       card-suit={props.cardSuit}
       car-nominal={props.cardNominal}
       onClick={onClickCard}
