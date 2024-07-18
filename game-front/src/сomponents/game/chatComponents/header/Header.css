@@ -10,6 +10,7 @@
   width: 100%;
   /* закругление углов элемента */
   border-radius: 5px 5px 0 0;
+  
 }
 
 .headerIcons {
@@ -39,6 +40,8 @@
   color: #fff;
   /* жирность текста */
   font-weight: 550;
+  /* шрифт текста */
+  font-style: italic;
 }
 
 /* Стили иконки 'Свернуть' */
