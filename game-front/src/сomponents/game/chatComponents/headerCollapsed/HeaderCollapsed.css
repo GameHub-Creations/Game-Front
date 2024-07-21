@@ -1,0 +1,70 @@
+/* Стили шапки закрытого чата */
+.headerCollapsed {
+  /* относительное позиционирование элемента */
+  position: absolute;
+  /* состояние (виден-скрыт) */
+  display: none;
+  /* сдвиг вниз */
+  bottom: 0;
+  /* сдвиг вправо */
+  right: 0;
+  /* ширина */
+  width: 220px;
+  /* высота */
+  height: 30px;
+  /* цвет фона */
+  background-color: #212121;
+  /* закругление углов */
+  border-radius: 5px 5px 0 0;
+  /* размера шрифта текста */
+  font-size: 75%;
+  /* шрифт текста */
+  font-style: italic;
+}
+
+.headerCollapsedIcons {
+  /* относительное позиционирование элемента */
+  position: relative;
+  /* размер элемента */
+  font-size: 14px;
+  /* отступ сверху */
+  top: 5px;
+}
+
+/* Стили иконки 'Сообщения' */
+.headerCollapsedIconMessage {
+  /* отступ слева */
+  left: 7px;
+}
+
+/* Стили контента заголовка чата */
+.headerCollapsedContent {
+  /* относительное позиционирование элемента */
+  position: relative;
+  /* отступ сверху */
+  top: 3px;
+  /* отступ слева */
+  left: 30px;
+  /* цвет текста */
+  color: #fff;
+  /* жирность текста */
+  font-weight: 550;
+  /* шрифт текста */
+  font-style: italic;
+}
+
+/* Стили иконки 'Развернуть' */
+.headerCollapsedIconOpen {
+  /* отступ слева */
+  left: 45px;
+  /* цвет текста */
+  color: #acacac;
+}
+
+/* Стили иконки 'Удалить' */
+.headerCollapsedIconClose {
+  /* отступ слева */
+  left: 50px;
+  /* цвет текста */
+  color: #acacac;
+}

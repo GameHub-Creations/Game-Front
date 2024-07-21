@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* цвет заднего фона */
+html, body {
+  background-color: gray;
+  height:100%;
+}
+
+#root {
+  position: relative;
+  height:100%;
+}

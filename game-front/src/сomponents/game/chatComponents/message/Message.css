@@ -1,0 +1,35 @@
+/* --------------- Стили сообщений чата --------------- */
+
+.roundedBox {
+  /* относительное позиционирование элемента */
+  position: relative;
+  /* перенос длинных слов */
+  word-wrap: break-word;
+  /* цвет фона */
+  background-color: #f5eade;
+  /* закругление границ */
+  border-radius: 0 10px 10px 10px;
+
+  display: inline-block;
+  padding: 3px 7px;
+  margin: 3px;
+  text-shadow: 1px 1px 1px
+}
+
+.namePlayer {
+  /* цвет текста */
+  color: #868033;
+}
+
+.message {
+  /* цвет текста */
+  color: #8d6147;
+}
+
+.messagesTime {
+  position: absolute;
+  bottom: 0px;
+  color: #777;
+  font-size: 70%;
+  right: 5px;
+}
