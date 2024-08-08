@@ -1,11 +1,13 @@
 import "./Action.css";
 
-import React from "react";
+import React, {useState} from "react";
 
 function Action(props) {
+  const [actionData, setActionData] = useState("Ваш ход")
+
   return (
-    <div className={props.classAction}>
-      <span>{props.valueAction}</span>
+    <div className="action">
+      <span>{actionData}</span>
     </div>
   );
 }

@@ -1,66 +1,48 @@
 import "./Chat.css";
 
+import React, { useState } from "react";
+
 import Dialogs from "./dialogs/Dialogs";
 import Header from "./header/Header";
 import HeaderCollapsed from "./headerCollapsed/HeaderCollapsed";
 import InputMessages from "./inputMessages/InputMessages";
-import React from "react";
 
-function Chat(props) {
-  // function useOutsideAlerter(onOutsideClick) {
-  //   const ref = useRef();
-
-  //   useEffect(() => {
-  //     function handleClick(event) {
-  //       if (ref.current && !ref.current.contains(event.target)) {
-  //         onOutsideClick();
-  //       }
-  //     }
-
-  //     document.addEventListener("mousedown", handleClick);
-
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClick);
-  //     };
-  //   }, [onOutsideClick]);
-
-  //   return ref;
-  // }
-  // function removeCursor(event) {
-  //   // Разворачивает чат
-  //   // let element = document.querySelector(".chat");
-  //   // let withinBoundaries = event.composedPath().includes(element);
-  //   return props.dispatch({
-  //     type: "Remove-Cursor",
-  //     // element: element,
-  //     // click: withinBoundaries,
-  //   });
-  // }
+function Chat() {
+  
+  const [chatData, setChatData] = useState({
+    headerStatusData: "block",
+    headerCollapsedStatusData: "none",
+    placeholderData: "Обсудить со всеми",
+    dialogsData: [
+      {
+        namePlayerData: "Гость 88888888",
+        messageData: "Я тебя разматаю",
+        messageTimeData: "12:26",
+      },
+      {
+        namePlayerData: "Гость 77777777",
+        messageData: "Иди говна поешь",
+        messageTimeData: "12:26",
+      },
+    ],
+    inputMessageData: "",
+  });
 
   return (
     <>
       {/* Блок чата */}
       <div
         className="chat"
-        style={{ display: props.headerStatus }}
-        // ref={removeCursor}
+        style={{ display: chatData.headerStatusData }}
       >
         {/* Блок заголовка чата */}
-        <Header
-          style={{ display: props.dialogsStatus }}
-          dispatch={props.dispatch}
-        />
-        <Dialogs dialogsData={props.dialogsData} dispatch={props.dispatch} />
+        <Header chatData={chatData} setChatData={setChatData} />
+        <Dialogs dialogsData={chatData.dialogsData} />
         <InputMessages
-          placeholderData={props.placeholderData}
-          inputMessageData={props.inputMessageData}
-          dispatch={props.dispatch}
+          chatData={chatData} setChatData={setChatData}
         />
       </div>
-      <HeaderCollapsed
-        headerCollapsedStatus={props.headerCollapsedStatus}
-        dispatch={props.dispatch}
-      />
+      <HeaderCollapsed chatData={chatData} setChatData={setChatData} />
     </>
   );
 }

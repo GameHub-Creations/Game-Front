@@ -7,7 +7,7 @@ import GameField from "./сomponents/game/gameField/GameField";
 import Header from "./сomponents/game/header/Header";
 import Main from "./сomponents/main/main";
 
-function App(props) {
+function App() {
   return (
     <div>
       <Header
@@ -18,21 +18,7 @@ function App(props) {
         <Route
           path="/"
           element={
-            <GameField
-              closedDeckData={props.state.gamePage.closedDeckData}
-              openDeckData={props.state.gamePage.openDeckData}
-              firsTemporaryDeckData={props.state.gamePage.firsTemporaryDeckData}
-              handDeck0Data={props.state.gamePage.handDeck0Data}
-              handDeck1Data={props.state.gamePage.handDeck1Data}
-              valueActionData={props.state.gamePage.valueActionData}
-              valueButtonData={props.state.gamePage.valueButtonData}
-              headerStatus={props.state.gamePage.chat.headerStatus}
-              headerCollapsedStatus={props.state.gamePage.chat.headerCollapsedStatus}
-              dialogsData={props.state.gamePage.chat.dialogsData}
-              placeholderData={props.state.gamePage.chat.placeholder}
-              inputMessageData={props.state.gamePage.chat.inputMessageData}
-              dispatch={props.dispatch}
-            />
+            <GameField />
           }
         />
         <Route path="/main" element={<Main />} />

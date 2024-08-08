@@ -8,10 +8,10 @@ function Dialogs(props) {
     <div className="dialogs">
       {props.dialogsData.map((el) => (
         <Message
-          key={el.valueNamePlayer}
-          valueNamePlayer={el.valueNamePlayer}
-          valueMessage={el.valueMessage}
-          valueMessageTime={el.valueMessageTime}
+          key={el.namePlayerData}
+          valueNamePlayer={el.namePlayerData}
+          valueMessage={el.messageData}
+          valueMessageTime={el.messageTimeData}
         />
       ))}
     </div>

@@ -2,60 +2,108 @@ import "./GameField.css";
 import "./../deck/Deck.css";
 import "./../card/Card.css";
 
+import React, { useState } from "react";
+
 import Action from "../action/Action";
 import ButtonTakeCards from "../buttonTakeCards/ButtonTakeCards";
 import Card from "../card/Card";
 import Chat from "../chatComponents/Chat";
 import Deck from "../deck/Deck";
-import React from "react";
 import UserDeck from "../userDeck/UserDeck";
 
 function GameField(props) {
+  const [closedDeckData, setClosedDeckData] = useState({
+    userId: null,
+    deckId: "00000011",
+    name: "Закрытая колода",
+    countCards: 31,
+    cards: { suit: "peak", nominal: "10" },
+  });
+  const [openDeckData, setOpenDeckData] = useState({
+    userId: null,
+    deckId: "00000012",
+    name: "Открытая колода",
+    countCards: 1,
+    cards: { suit: "peak", nominal: "A" },
+  });
+  const [temporaryDeckData, setTemporaryDeckData] = useState({
+    userId: null,
+    deckId: "00000013",
+    name: "Временная колода",
+    countCards: 1,
+    cards: { suit: "peak", nominal: "A" },
+  });
+  const [handDeck0Data, setHandDeck0Data] = useState({
+    userId: "10000000",
+    deckId: "00000001",
+    name: "Гость 77777777",
+    userRank: "666",
+    countCards: 2,
+    cards: { suit: "peak", nominal: "A" },
+  });
+  const [handDeck1Data, setHandDeck1Data] = useState({
+    userId: "20000000",
+    deckId: "00000002",
+    name: "Гость 88888888",
+    userRank: "999",
+    countCards: 2,
+    cards: { suit: "peak", nominal: "A" },
+  });
+
+  function updateClosedDeck() {
+    return alert("click on ClosedDeck");
+  }
+  function updateOpenDeck() {
+    return alert("click on OpenDeck");
+  }
+  function updateTemporaryDeck() {
+    return alert("click on TemporaryDeck");
+  }
+  function updateHandDeck0() {
+    return alert("click on HandDeck0");
+  }
+  function updateHandDeck1() {
+    return alert("click on HandDeck1");
+  }
   return (
     <div id="gameField" className="content pictureCard shirtCard">
       <div>
         <Deck
+          deckData={closedDeckData} 
+          setDeckData={setClosedDeckData}
           classCount="deckCount closedDeckCount"
-          deckId={props.closedDeckData.deckId}
-          userId={props.closedDeckData.userId}
-          valueCount={props.closedDeckData.countCards}
           classCards="decks closedDeckCards"
           cards={
             <Card
               classCard="card back"
-              cardSuit={props.closedDeckData.cards.suit}
-              cardNominal={props.closedDeckData.cards.nominal}
-              dispatch={props.dispatch}
+              cards={handDeck0Data.cards}
+              updateDeck={updateClosedDeck}
             />
           }
         />
         <Deck
           classCount="deckCount openDeckCount"
-          deckId={props.openDeckData.deckId}
-          userId={props.openDeckData.userId}
-          valueCount={props.openDeckData.countCards}
+          deckData={openDeckData}
+          setDeckData={setOpenDeckData}
           classCards="decks openDeckCards"
           cards={
             <Card
               classCard="card"
-              cardSuit={props.openDeckData.cards.suit}
-              cardNominal={props.openDeckData.cards.nominal}
-              dispatch={props.dispatch}
+              cards={handDeck0Data.cards}
+              updateDeck={updateOpenDeck}
             />
           }
         />
         <Deck
           classCount="deckCount firsTemporaryDeckCount"
-          userId={props.firsTemporaryDeckData.userId}
-          deckId={props.firsTemporaryDeckData.deckId}
-          valueCount={props.firsTemporaryDeckData.countCards}
+          deckData={temporaryDeckData}
+          setDeckData={setTemporaryDeckData}
           classCards="decks firsTemporaryDeckCards"
           cards={
             <Card
               classCard="card"
-              cardSuit={props.firsTemporaryDeckData.cards.suit}
-              cardNominal={props.firsTemporaryDeckData.cards.nominal}
-              dispatch={props.dispatch}
+              cards={handDeck0Data.cards}
+              updateDeck={updateTemporaryDeck}
             />
           }
         />
@@ -63,47 +111,35 @@ function GameField(props) {
       <div>
         <UserDeck
           classUserName="userNames userName0"
-          userId={props.handDeck0Data.userId}
-          deckId={props.handDeck0Data.deckId}
-          valueUserName={props.handDeck0Data.name}
-          valueUserRank={props.handDeck0Data.userRank}
+          deckData={handDeck0Data}
+          setDeckData={setHandDeck0Data}
           classCount="hand handCount0"
-          valueCount={props.handDeck0Data.countCards}
           classCards="hand handCards0"
           cards={
             <Card
               classCard="card"
-              cardSuit={props.handDeck0Data.cards.suit}
-              cardNominal={props.handDeck0Data.cards.nominal}
-              dispatch={props.dispatch}
+              cards={handDeck0Data.cards}
+              updateDeck={updateHandDeck0}
             />
           }
         />
         <UserDeck
           classUserName="userNames userName1"
-          userId={props.handDeck1Data.userId}
-          deckId={props.handDeck1Data.deckId}
-          valueUserName={props.handDeck1Data.name}
-          valueUserRank={props.handDeck1Data.userRank}
+          deckData={handDeck1Data}
+          setDeckData={setHandDeck1Data}
           classCount="hand handCount1"
-          valueCount={props.handDeck1Data.countCards}
           classCards="hand handCards1"
           cards={
             <Card
               classCard="card back"
-              cardSuit={props.handDeck1Data.cards.suit}
-              cardNominal={props.handDeck1Data.cards.nominal}
-              dispatch={props.dispatch}
+              cards={handDeck1Data.cards}
+              updateDeck={updateHandDeck1}
             />
           }
         />
       </div>
-      <Action classAction="action" valueAction={props.valueActionData} />
-      <ButtonTakeCards
-        classButton="userButton"
-        valueButton={props.valueButtonData}
-        dispatch={props.dispatch}
-      />
+      <Action />
+      <ButtonTakeCards />
       <Chat
         headerStatus={props.headerStatus}
         headerCollapsedStatus={props.headerCollapsedStatus}

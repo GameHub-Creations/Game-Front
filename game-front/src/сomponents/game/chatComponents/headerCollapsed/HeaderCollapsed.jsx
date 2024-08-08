@@ -6,18 +6,30 @@ import { LuMessageSquare } from "react-icons/lu";
 import React from "react";
 
 function HeaderCollapsed(props) {
+
+  let {chatData, setChatData} = props;
+  
   function openChat() {
-    // Разворачивает чат
-    return props.dispatch({ type: "Click-Open-Chat" });
+    // Сворачивает чат
+    setChatData({
+      ...chatData,
+      headerStatusData: "block",
+      headerCollapsedStatusData: "none",
+    });
   }
   function closeChat() {
     // Закрывает чат
-    return props.dispatch({ type: "Click-Close-Chat" });
+    setChatData({
+      ...chatData,
+      headerStatusData: "none",
+      headerCollapsedStatusData: "none",
+    });
   }
+
   return (
     <div
       className="headerCollapsed"
-      style={{ display: props.headerCollapsedStatus }}
+      style={{ display: chatData.headerCollapsedStatusData }}
     >
       <LuMessageSquare className="headerCollapsedIcons headerCollapsedIconMessage" />
       <span className="headerCollapsedContent">Общие сообщения</span>
@@ -25,7 +37,10 @@ function HeaderCollapsed(props) {
         className="headerCollapsedIcons headerCollapsedIconOpen"
         onClick={openChat}
       />
-      <CiCircleRemove className="headerCollapsedIcons headerCollapsedIconClose" onClick={closeChat} />
+      <CiCircleRemove
+        className="headerCollapsedIcons headerCollapsedIconClose"
+        onClick={closeChat}
+      />
     </div>
   );
 }

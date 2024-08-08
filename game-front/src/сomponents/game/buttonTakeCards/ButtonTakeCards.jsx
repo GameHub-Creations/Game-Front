@@ -1,20 +1,17 @@
 import "./ButtonTakeCards.css";
 
-import React from "react";
+import React, { useState } from "react";
 
 function ButtonTakeCards(props) {
+  const [buttonData, setButtonData] = useState("Взять карты");
 
-  function onClickButton() {
-    return props.dispatch({ type: "Click-Button" })
+  function onClickButton2() {
+    return alert("click on button");
   }
 
-  
   return (
-    <button
-      className={props.classButton}
-      onClick={onClickButton}
-    >
-      {props.valueButton}
+    <button className="userButton" onClick={onClickButton2}>
+      {buttonData}
     </button>
   );
 }

@@ -6,20 +6,32 @@ import { LuMessageSquare } from "react-icons/lu";
 import React from "react";
 
 function Header(props) {
+  const {chatData, setChatData} = props;
+  
   function turnChat() {
     // Сворачивает чат
-    return props.dispatch({ type: "Click-Turn-Chat" });
+    setChatData({
+      ...chatData,
+      headerStatusData: "none",
+      headerCollapsedStatusData: "block",
+    });
   }
   function closeChat() {
     // Закрывает чат
-    return props.dispatch({ type: "Click-Close-Chat" });
+    setChatData({ ...chatData, headerStatusData: "none" });
   }
   return (
     <div className="header">
       <LuMessageSquare className="headerIcons headerIconMessage" />
       <span className="headerContent">Общие сообщения</span>
-      <CiCircleChevDown className="headerIcons headerIconCollapse" onClick={turnChat} />
-      <CiCircleRemove className="headerIcons headerIconClose" onClick={closeChat} />
+      <CiCircleChevDown
+        className="headerIcons headerIconCollapse"
+        onClick={turnChat}
+      />
+      <CiCircleRemove
+        className="headerIcons headerIconClose"
+        onClick={closeChat}
+      />
     </div>
   );
 }

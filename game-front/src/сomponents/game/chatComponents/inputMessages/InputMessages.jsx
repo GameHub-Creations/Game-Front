@@ -3,25 +3,43 @@ import "./InputMessages.css";
 import React from "react";
 
 function InputMessages(props) {
-  let createRef = React.createRef();
+  let { chatData, setChatData } = props;
+
+  function addZeroesToDate(time) {
+    if (time.getMonth < 10) return "0" + time;
+    return time;
+  }
+
+  function getTime() {
+    let hours = addZeroesToDate(new Date().getHours());
+    let minutes = addZeroesToDate(new Date().getMinutes());
+    return `${hours}:${minutes}`;
+  }
 
   function addMessage(event) {
     // Добавляет сообщение в диалог чата
     if (event.key === "Enter") {
-      props.dispatch({
-        type: "Add-Message",
+      setChatData({
+        ...chatData,
+        dialogsData: [
+          ...chatData.dialogsData,
+          {
+            namePlayerData: Date.now(),
+            messageData: chatData.inputMessageData,
+            messageTimeData: getTime(),
+          },
+        ],
+        inputMessageData: "",
       });
     }
   }
 
-  function changeMessage() {
+  function changeMessage(e) {
     // Записывает текст введенный в поле ввода
-    let newText = createRef.current.value;
-    let action = {
-      type: "Change-Message",
-      newText: newText,
-    };
-    props.dispatch(action);
+      setChatData({
+        ...chatData,
+        inputMessageData: e.target.value,
+      })
   }
 
   return (
@@ -29,10 +47,9 @@ function InputMessages(props) {
     <div className="chatMessages">
       <textarea
         className="chatInput"
-        placeholder={props.placeholderData}
-        ref={createRef}
+        placeholder={chatData.placeholderData}
         onKeyDown={addMessage}
-        value={props.inputMessageData}
+        value={chatData.inputMessageData}
         onChange={changeMessage}
       ></textarea>
     </div>
