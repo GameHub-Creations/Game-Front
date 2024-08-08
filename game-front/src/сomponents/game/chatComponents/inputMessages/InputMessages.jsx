@@ -21,25 +21,25 @@ function InputMessages(props) {
     if (event.key === "Enter") {
       setChatData({
         ...chatData,
-        dialogsData: [
-          ...chatData.dialogsData,
+        dialogs: [
+          ...chatData.dialogs,
           {
-            namePlayerData: Date.now(),
-            messageData: chatData.inputMessageData,
-            messageTimeData: getTime(),
+            namePlayer: Date.now(),
+            message: chatData.inputMessage,
+            messageTime: getTime(),
           },
         ],
-        inputMessageData: "",
+        inputMessage: "",
       });
     }
   }
 
   function changeMessage(e) {
     // Записывает текст введенный в поле ввода
-      setChatData({
-        ...chatData,
-        inputMessageData: e.target.value,
-      })
+    setChatData({
+      ...chatData,
+      inputMessage: e.target.value,
+    });
   }
 
   return (
@@ -47,9 +47,9 @@ function InputMessages(props) {
     <div className="chatMessages">
       <textarea
         className="chatInput"
-        placeholder={chatData.placeholderData}
+        placeholder={chatData.placeholder}
         onKeyDown={addMessage}
-        value={chatData.inputMessageData}
+        value={chatData.inputMessage}
         onChange={changeMessage}
       ></textarea>
     </div>

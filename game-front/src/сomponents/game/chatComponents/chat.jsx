@@ -10,22 +10,22 @@ import InputMessages from "./inputMessages/InputMessages";
 function Chat() {
   
   const [chatData, setChatData] = useState({
-    headerStatusData: "block",
-    headerCollapsedStatusData: "none",
-    placeholderData: "Обсудить со всеми",
-    dialogsData: [
+    headerStatus: "block",
+    headerCollapsedStatus: "none",
+    placeholder: "Обсудить со всеми",
+    dialogs: [
       {
-        namePlayerData: "Гость 88888888",
-        messageData: "Я тебя разматаю",
-        messageTimeData: "12:26",
+        namePlayer: "Гость 88888888",
+        message: "Я тебя разматаю",
+        messageTime: "12:26",
       },
       {
-        namePlayerData: "Гость 77777777",
-        messageData: "Иди говна поешь",
-        messageTimeData: "12:26",
+        namePlayer: "Гость 77777777",
+        message: "Иди говна поешь",
+        messageTime: "12:26",
       },
     ],
-    inputMessageData: "",
+    inputMessage: "",
   });
 
   return (
@@ -33,11 +33,11 @@ function Chat() {
       {/* Блок чата */}
       <div
         className="chat"
-        style={{ display: chatData.headerStatusData }}
+        style={{ display: chatData.headerStatus }}
       >
         {/* Блок заголовка чата */}
         <Header chatData={chatData} setChatData={setChatData} />
-        <Dialogs dialogsData={chatData.dialogsData} />
+        <Dialogs dialogs={chatData.dialogs} /> 
         <InputMessages
           chatData={chatData} setChatData={setChatData}
         />

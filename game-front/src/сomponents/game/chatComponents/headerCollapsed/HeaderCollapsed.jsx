@@ -13,23 +13,23 @@ function HeaderCollapsed(props) {
     // Сворачивает чат
     setChatData({
       ...chatData,
-      headerStatusData: "block",
-      headerCollapsedStatusData: "none",
+      headerStatus: "block",
+      headerCollapsedStatus: "none",
     });
   }
   function closeChat() {
     // Закрывает чат
     setChatData({
       ...chatData,
-      headerStatusData: "none",
-      headerCollapsedStatusData: "none",
+      headerStatus: "none",
+      headerCollapsedStatus: "none",
     });
   }
 
   return (
     <div
       className="headerCollapsed"
-      style={{ display: chatData.headerCollapsedStatusData }}
+      style={{ display: chatData.headerCollapsedStatus }}
     >
       <LuMessageSquare className="headerCollapsedIcons headerCollapsedIconMessage" />
       <span className="headerCollapsedContent">Общие сообщения</span>

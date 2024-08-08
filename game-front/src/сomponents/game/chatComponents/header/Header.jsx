@@ -12,13 +12,13 @@ function Header(props) {
     // Сворачивает чат
     setChatData({
       ...chatData,
-      headerStatusData: "none",
-      headerCollapsedStatusData: "block",
+      headerStatus: "none",
+      headerCollapsedStatus: "block",
     });
   }
   function closeChat() {
     // Закрывает чат
-    setChatData({ ...chatData, headerStatusData: "none" });
+    setChatData({ ...chatData, headerStatus: "none" });
   }
   return (
     <div className="header">
