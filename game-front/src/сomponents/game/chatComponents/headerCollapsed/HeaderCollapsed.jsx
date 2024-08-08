@@ -7,7 +7,7 @@ import React from "react";
 
 function HeaderCollapsed(props) {
 
-  let {chatData, setChatData} = props;
+  const {chatData, setChatData} = props;
   
   function openChat() {
     // Сворачивает чат

@@ -3,7 +3,7 @@ import "./InputMessages.css";
 import React from "react";
 
 function InputMessages(props) {
-  let { chatData, setChatData } = props;
+  const { chatData, setChatData } = props;
 
   function addZeroesToDate(time) {
     if (time.getMonth < 10) return "0" + time;
